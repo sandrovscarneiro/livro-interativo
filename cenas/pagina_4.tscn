@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bgmwn0g7uk6m0"]
+[gd_scene load_steps=9 format=3 uid="uid://bgmwn0g7uk6m0"]
 
 [ext_resource type="Texture2D" uid="uid://cq6p4ua3h27cg" path="res://assets/imagens/bg_pagina_4.png" id="1_sd0e6"]
 [ext_resource type="Texture2D" uid="uid://bxgep0gwfw4r0" path="res://assets/imagens/btn_prox_pagina.png" id="2_4kjwo"]
@@ -7,6 +7,9 @@
 [ext_resource type="AudioStream" uid="uid://bj3077xnbcwht" path="res://assets/sons/pagina_4.mp3" id="4_kimfi"]
 [ext_resource type="Texture2D" uid="uid://5sjqrctvhdrp" path="res://assets/imagens/btn_pag_anterior.png" id="5_4kjwo"]
 [ext_resource type="Script" uid="uid://s1xo5kem3d4k" path="res://scripts/btn_pag_anterior.gd" id="7_a4um2"]
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_kimfi"]
+file = "res://assets/videos/empirismo-video.ogg"
 
 [node name="Pagina4" type="Node2D"]
 
@@ -32,6 +35,14 @@ position = Vector2(30, 919)
 texture_normal = ExtResource("5_4kjwo")
 script = ExtResource("7_a4um2")
 path_pag_anterior = "res://cenas/pagina_3.tscn"
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_left = 60.0
+offset_top = 210.0
+offset_right = 700.0
+offset_bottom = 570.0
+stream = SubResource("VideoStreamTheora_kimfi")
+autoplay = true
 
 [connection signal="pressed" from="btn_prox_pagina" to="btn_prox_pagina" method="_on_pressed"]
 [connection signal="pressed" from="btn_pag_anterior" to="btn_pag_anterior" method="_on_pressed"]
