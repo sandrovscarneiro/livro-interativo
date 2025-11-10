@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://rhdathwpo43c"]
+[gd_scene load_steps=8 format=3 uid="uid://rhdathwpo43c"]
 
 [ext_resource type="Texture2D" uid="uid://2pxo7hgjmu6x" path="res://assets/imagens/bg_pagina_5.png" id="1_266wy"]
 [ext_resource type="Texture2D" uid="uid://bxgep0gwfw4r0" path="res://assets/imagens/btn_prox_pagina.png" id="2_sfyh7"]
 [ext_resource type="Texture2D" uid="uid://cgb200g3bj7dc" path="res://assets/imagens/btn_som_desligar.png" id="3_3tj36"]
+[ext_resource type="Script" uid="uid://djngjiov5euex" path="res://scripts/btn_prox_pagina.gd" id="3_r83hw"]
 [ext_resource type="AudioStream" uid="uid://b348kr6raj7ix" path="res://assets/sons/pagina_5.mp3" id="4_r83hw"]
 [ext_resource type="Texture2D" uid="uid://5sjqrctvhdrp" path="res://assets/imagens/btn_pag_anterior.png" id="5_sfyh7"]
+[ext_resource type="Script" uid="uid://s1xo5kem3d4k" path="res://scripts/btn_pag_anterior.gd" id="7_h011n"]
 
 [node name="Pagina5" type="Node2D"]
 
@@ -15,6 +17,8 @@ texture = ExtResource("1_266wy")
 [node name="btn_prox_pagina" type="TouchScreenButton" parent="."]
 position = Vector2(580, 919)
 texture_normal = ExtResource("2_sfyh7")
+script = ExtResource("3_r83hw")
+path_prox_pagina = "res://cenas/pagina_6.tscn"
 
 [node name="btn_som" type="TouchScreenButton" parent="."]
 position = Vector2(643, 24)
@@ -26,3 +30,5 @@ stream = ExtResource("4_r83hw")
 [node name="btn_pag_anterior" type="TouchScreenButton" parent="."]
 position = Vector2(30, 919)
 texture_normal = ExtResource("5_sfyh7")
+script = ExtResource("7_h011n")
+path_pag_anterior = "res://cenas/pagina_4.tscn"
