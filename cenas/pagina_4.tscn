@@ -29,6 +29,7 @@ texture_normal = ExtResource("3_agou0")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_kimfi")
+autoplay = true
 
 [node name="btn_pag_anterior" type="TouchScreenButton" parent="."]
 position = Vector2(30, 919)
@@ -42,7 +43,6 @@ offset_top = 210.0
 offset_right = 700.0
 offset_bottom = 570.0
 stream = SubResource("VideoStreamTheora_kimfi")
-autoplay = true
 
 [connection signal="pressed" from="btn_prox_pagina" to="btn_prox_pagina" method="_on_pressed"]
 [connection signal="pressed" from="btn_pag_anterior" to="btn_pag_anterior" method="_on_pressed"]

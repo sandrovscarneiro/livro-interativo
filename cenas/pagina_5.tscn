@@ -26,6 +26,7 @@ texture_normal = ExtResource("3_3tj36")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_r83hw")
+autoplay = true
 
 [node name="btn_pag_anterior" type="TouchScreenButton" parent="."]
 position = Vector2(30, 919)
