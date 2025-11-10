@@ -33,4 +33,5 @@ texture_normal = ExtResource("5_p47bp")
 script = ExtResource("7_ec4tr")
 path_pag_anterior = "res://capa.tscn"
 
+[connection signal="pressed" from="btn_prox_pagina" to="btn_prox_pagina" method="_on_pressed"]
 [connection signal="pressed" from="btn_pag_anterior" to="btn_pag_anterior" method="_on_pressed"]

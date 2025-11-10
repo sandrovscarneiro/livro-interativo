@@ -32,3 +32,6 @@ position = Vector2(30, 919)
 texture_normal = ExtResource("5_4kjwo")
 script = ExtResource("7_a4um2")
 path_pag_anterior = "res://cenas/pagina_3.tscn"
+
+[connection signal="pressed" from="btn_prox_pagina" to="btn_prox_pagina" method="_on_pressed"]
+[connection signal="pressed" from="btn_pag_anterior" to="btn_pag_anterior" method="_on_pressed"]

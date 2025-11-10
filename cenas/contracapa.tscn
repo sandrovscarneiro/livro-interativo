@@ -16,10 +16,12 @@ texture = ExtResource("1_w6bo8")
 position = Vector2(30, 919)
 texture_normal = ExtResource("2_8jqna")
 script = ExtResource("3_p1ffv")
+path_pag_anterior = "res://cenas/pagina_7.tscn"
 
 [node name="btn_voltar_inicio" type="TouchScreenButton" parent="."]
 position = Vector2(580, 919)
 texture_normal = ExtResource("3_vmx3j")
 script = ExtResource("5_lfdvd")
 
+[connection signal="pressed" from="btn_pag_anterior" to="btn_pag_anterior" method="_on_pressed"]
 [connection signal="pressed" from="btn_voltar_inicio" to="btn_voltar_inicio" method="_on_pressed"]
