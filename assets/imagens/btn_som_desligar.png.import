@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1ftayw6tc5rl"
-path="res://.godot/imported/página 1.png-778920493886726bc3d14e97387c6bbc.ctex"
+uid="uid://cgb200g3bj7dc"
+path="res://.godot/imported/btn_som_desligar.png-cf27bed08b1ca4affbad8d574a6f0bf2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/página 1.png"
-dest_files=["res://.godot/imported/página 1.png-778920493886726bc3d14e97387c6bbc.ctex"]
+source_file="res://assets/imagens/btn_som_desligar.png"
+dest_files=["res://.godot/imported/btn_som_desligar.png-cf27bed08b1ca4affbad8d574a6f0bf2.ctex"]
 
 [params]
 

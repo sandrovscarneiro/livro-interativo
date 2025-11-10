@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnw50s3ggjors"
-path="res://.godot/imported/contracapa.png-5d2b7e1ba0069d6da161b6ee384cc7de.ctex"
+uid="uid://5sjqrctvhdrp"
+path="res://.godot/imported/btn_pag_anterior.png-13395d0b07acc81ddb0afc55d13c9370.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/contracapa.png"
-dest_files=["res://.godot/imported/contracapa.png-5d2b7e1ba0069d6da161b6ee384cc7de.ctex"]
+source_file="res://assets/imagens/btn_pag_anterior.png"
+dest_files=["res://.godot/imported/btn_pag_anterior.png-13395d0b07acc81ddb0afc55d13c9370.ctex"]
 
 [params]
 

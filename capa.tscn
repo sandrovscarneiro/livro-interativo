@@ -1,3 +1,23 @@
-[gd_scene format=3 uid="uid://dl2h6lkx15aiu"]
+[gd_scene load_steps=5 format=3 uid="uid://dl2h6lkx15aiu"]
+
+[ext_resource type="Texture2D" uid="uid://bffol1gdyrnfq" path="res://assets/imagens/bg_capa.png" id="1_tficw"]
+[ext_resource type="Texture2D" uid="uid://bxgep0gwfw4r0" path="res://assets/imagens/btn_prox_pagina.png" id="2_i3gmj"]
+[ext_resource type="Texture2D" uid="uid://cgb200g3bj7dc" path="res://assets/imagens/btn_som_desligar.png" id="3_mqhed"]
+[ext_resource type="AudioStream" uid="uid://mghxy45xbcms" path="res://assets/sons/capa.mp3" id="4_ta7er"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(384, 512)
+texture = ExtResource("1_tficw")
+
+[node name="btn_prox_pagina" type="TouchScreenButton" parent="."]
+position = Vector2(580, 919)
+texture_normal = ExtResource("2_i3gmj")
+
+[node name="btn_som" type="TouchScreenButton" parent="."]
+position = Vector2(643, 24)
+texture_normal = ExtResource("3_mqhed")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ta7er")

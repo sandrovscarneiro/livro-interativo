@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgs2nf4sslpb5"
-path="res://.godot/imported/página 5.png-5d05f66c9a64e902327ab8e0a5e8b5b6.ctex"
+uid="uid://cnnyfhc4qwn7l"
+path="res://.godot/imported/btn_voltar_inicio.png-a18813c1578f3ac27448c70a2c7bb042.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/página 5.png"
-dest_files=["res://.godot/imported/página 5.png-5d05f66c9a64e902327ab8e0a5e8b5b6.ctex"]
+source_file="res://assets/imagens/btn_voltar_inicio.png"
+dest_files=["res://.godot/imported/btn_voltar_inicio.png-a18813c1578f3ac27448c70a2c7bb042.ctex"]
 
 [params]
 
