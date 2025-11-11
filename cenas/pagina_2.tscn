@@ -1,11 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://cjy48mg4v765n"]
+[gd_scene load_steps=10 format=3 uid="uid://cjy48mg4v765n"]
 
 [ext_resource type="Texture2D" uid="uid://kyuhemy4o2en" path="res://assets/imagens/bg_pagina_2.png" id="1_2ft2w"]
 [ext_resource type="Texture2D" uid="uid://bxgep0gwfw4r0" path="res://assets/imagens/btn_prox_pagina.png" id="2_p47bp"]
 [ext_resource type="Script" uid="uid://djngjiov5euex" path="res://scripts/btn_prox_pagina.gd" id="3_ec4tr"]
 [ext_resource type="Texture2D" uid="uid://cgb200g3bj7dc" path="res://assets/imagens/btn_som_desligar.png" id="3_njjxu"]
 [ext_resource type="AudioStream" uid="uid://bfcrnlw6rykob" path="res://assets/sons/pagina_2.mp3" id="4_ec4tr"]
+[ext_resource type="Script" uid="uid://ealxwk1jt2js" path="res://scripts/btn_som.gd" id="5_og8gs"]
 [ext_resource type="Texture2D" uid="uid://5sjqrctvhdrp" path="res://assets/imagens/btn_pag_anterior.png" id="5_p47bp"]
+[ext_resource type="Script" uid="uid://d2187rgv385j5" path="res://scripts/audio_stream_player.gd" id="7_3uo2l"]
 [ext_resource type="Script" uid="uid://s1xo5kem3d4k" path="res://scripts/btn_pag_anterior.gd" id="7_ec4tr"]
 
 [node name="Pagina2" type="Node2D"]
@@ -23,10 +25,21 @@ path_prox_pagina = "res://cenas/pagina_3.tscn"
 [node name="btn_som" type="TouchScreenButton" parent="."]
 position = Vector2(643, 24)
 texture_normal = ExtResource("3_njjxu")
+script = ExtResource("5_og8gs")
+
+[node name="Label" type="Label" parent="btn_som"]
+offset_left = -18.0
+offset_top = 69.0
+offset_right = 74.0
+offset_bottom = 92.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Placeholder"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_ec4tr")
-autoplay = true
+script = ExtResource("7_3uo2l")
 
 [node name="btn_pag_anterior" type="TouchScreenButton" parent="."]
 position = Vector2(30, 919)
@@ -35,4 +48,7 @@ script = ExtResource("7_ec4tr")
 path_pag_anterior = "res://capa.tscn"
 
 [connection signal="pressed" from="btn_prox_pagina" to="btn_prox_pagina" method="_on_pressed"]
+[connection signal="pressed" from="btn_som" to="btn_som" method="_on_pressed"]
+[connection signal="pressed" from="btn_som" to="AudioStreamPlayer" method="_on_btn_som_pressed"]
+[connection signal="ready" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_ready"]
 [connection signal="pressed" from="btn_pag_anterior" to="btn_pag_anterior" method="_on_pressed"]

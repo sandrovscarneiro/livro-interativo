@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bgmwn0g7uk6m0"]
+[gd_scene load_steps=11 format=3 uid="uid://bgmwn0g7uk6m0"]
 
 [ext_resource type="Texture2D" uid="uid://cq6p4ua3h27cg" path="res://assets/imagens/bg_pagina_4.png" id="1_sd0e6"]
 [ext_resource type="Texture2D" uid="uid://bxgep0gwfw4r0" path="res://assets/imagens/btn_prox_pagina.png" id="2_4kjwo"]
@@ -6,7 +6,9 @@
 [ext_resource type="Script" uid="uid://djngjiov5euex" path="res://scripts/btn_prox_pagina.gd" id="3_kimfi"]
 [ext_resource type="AudioStream" uid="uid://bj3077xnbcwht" path="res://assets/sons/pagina_4.mp3" id="4_kimfi"]
 [ext_resource type="Texture2D" uid="uid://5sjqrctvhdrp" path="res://assets/imagens/btn_pag_anterior.png" id="5_4kjwo"]
+[ext_resource type="Script" uid="uid://ealxwk1jt2js" path="res://scripts/btn_som.gd" id="5_yp2xy"]
 [ext_resource type="Script" uid="uid://s1xo5kem3d4k" path="res://scripts/btn_pag_anterior.gd" id="7_a4um2"]
+[ext_resource type="Script" uid="uid://d2187rgv385j5" path="res://scripts/audio_stream_player.gd" id="7_o662s"]
 
 [sub_resource type="VideoStreamTheora" id="VideoStreamTheora_kimfi"]
 file = "res://assets/videos/empirismo-video.ogg"
@@ -26,10 +28,21 @@ path_prox_pagina = "res://cenas/pagina_5.tscn"
 [node name="btn_som" type="TouchScreenButton" parent="."]
 position = Vector2(643, 24)
 texture_normal = ExtResource("3_agou0")
+script = ExtResource("5_yp2xy")
+
+[node name="Label" type="Label" parent="btn_som"]
+offset_left = -18.0
+offset_top = 69.0
+offset_right = 74.0
+offset_bottom = 92.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Placeholder"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_kimfi")
-autoplay = true
+script = ExtResource("7_o662s")
 
 [node name="btn_pag_anterior" type="TouchScreenButton" parent="."]
 position = Vector2(30, 919)
@@ -45,4 +58,7 @@ offset_bottom = 570.0
 stream = SubResource("VideoStreamTheora_kimfi")
 
 [connection signal="pressed" from="btn_prox_pagina" to="btn_prox_pagina" method="_on_pressed"]
+[connection signal="pressed" from="btn_som" to="btn_som" method="_on_pressed"]
+[connection signal="pressed" from="btn_som" to="AudioStreamPlayer" method="_on_btn_som_pressed"]
+[connection signal="ready" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_ready"]
 [connection signal="pressed" from="btn_pag_anterior" to="btn_pag_anterior" method="_on_pressed"]

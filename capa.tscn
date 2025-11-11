@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://dl2h6lkx15aiu"]
+[gd_scene load_steps=8 format=3 uid="uid://dl2h6lkx15aiu"]
 
 [ext_resource type="Texture2D" uid="uid://bffol1gdyrnfq" path="res://assets/imagens/bg_capa.png" id="1_tficw"]
 [ext_resource type="Texture2D" uid="uid://bxgep0gwfw4r0" path="res://assets/imagens/btn_prox_pagina.png" id="2_i3gmj"]
 [ext_resource type="Script" uid="uid://djngjiov5euex" path="res://scripts/btn_prox_pagina.gd" id="3_i3gmj"]
 [ext_resource type="Texture2D" uid="uid://cgb200g3bj7dc" path="res://assets/imagens/btn_som_desligar.png" id="3_mqhed"]
 [ext_resource type="AudioStream" uid="uid://mghxy45xbcms" path="res://assets/sons/capa.mp3" id="4_ta7er"]
+[ext_resource type="Script" uid="uid://ealxwk1jt2js" path="res://scripts/btn_som.gd" id="5_mqhed"]
+[ext_resource type="Script" uid="uid://d2187rgv385j5" path="res://scripts/audio_stream_player.gd" id="7_ta7er"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -21,9 +23,24 @@ path_prox_pagina = "res://cenas/pagina_2.tscn"
 [node name="btn_som" type="TouchScreenButton" parent="."]
 position = Vector2(643, 24)
 texture_normal = ExtResource("3_mqhed")
+script = ExtResource("5_mqhed")
+
+[node name="Label" type="Label" parent="btn_som"]
+offset_left = -18.0
+offset_top = 69.0
+offset_right = 74.0
+offset_bottom = 92.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Placeholder"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_ta7er")
-autoplay = true
+script = ExtResource("7_ta7er")
 
 [connection signal="pressed" from="btn_prox_pagina" to="btn_prox_pagina" method="_on_pressed"]
+[connection signal="pressed" from="btn_som" to="btn_som" method="_on_pressed"]
+[connection signal="pressed" from="btn_som" to="AudioStreamPlayer" method="_on_btn_som_pressed"]
+[connection signal="ready" from="btn_som" to="btn_som" method="_on_ready"]
+[connection signal="ready" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_ready"]
