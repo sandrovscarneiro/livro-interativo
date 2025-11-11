@@ -50,5 +50,6 @@ path_pag_anterior = "res://capa.tscn"
 [connection signal="pressed" from="btn_prox_pagina" to="btn_prox_pagina" method="_on_pressed"]
 [connection signal="pressed" from="btn_som" to="btn_som" method="_on_pressed"]
 [connection signal="pressed" from="btn_som" to="AudioStreamPlayer" method="_on_btn_som_pressed"]
+[connection signal="finished" from="AudioStreamPlayer" to="btn_som" method="_on_audio_stream_player_finished"]
 [connection signal="ready" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_ready"]
 [connection signal="pressed" from="btn_pag_anterior" to="btn_pag_anterior" method="_on_pressed"]
