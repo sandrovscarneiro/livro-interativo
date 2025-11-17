@@ -13,9 +13,3 @@ func _on_pressed() -> void:
 	Globals.play_sound = !Globals.play_sound
 	texture_normal = list_icons[int(Globals.play_sound)]
 	$Label.text = list_texts[int(Globals.play_sound)]
-
-
-func _on_audio_stream_player_finished() -> void:
-	Globals.play_sound = false
-	texture_normal = list_icons[int(Globals.play_sound)]
-	$Label.text = list_texts[int(Globals.play_sound)]

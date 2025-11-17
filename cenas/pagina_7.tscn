@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dknoq05w3e2fh"]
+[gd_scene load_steps=11 format=3 uid="uid://dknoq05w3e2fh"]
 
 [ext_resource type="Texture2D" uid="uid://b7trc53m63w71" path="res://assets/imagens/bg_pagina_7.png" id="1_5n0kc"]
 [ext_resource type="Texture2D" uid="uid://bxgep0gwfw4r0" path="res://assets/imagens/btn_prox_pagina.png" id="2_7w17q"]
@@ -9,6 +9,8 @@
 [ext_resource type="Script" uid="uid://ealxwk1jt2js" path="res://scripts/btn_som.gd" id="5_ymvf6"]
 [ext_resource type="Script" uid="uid://d2187rgv385j5" path="res://scripts/audio_stream_player.gd" id="7_1lhl4"]
 [ext_resource type="Script" uid="uid://s1xo5kem3d4k" path="res://scripts/btn_pag_anterior.gd" id="7_fsfl7"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ymvf6"]
 
 [node name="Pagina7" type="Node2D"]
 
@@ -46,6 +48,27 @@ position = Vector2(30, 919)
 texture_normal = ExtResource("5_7w17q")
 script = ExtResource("7_fsfl7")
 path_pag_anterior = "res://cenas/pagina_6.tscn"
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+offset_left = 70.0
+offset_top = 223.0
+offset_right = 706.0
+offset_bottom = 499.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+size = Vector2i(636, 276)
+
+[node name="Node3D" type="Node3D" parent="SubViewportContainer/SubViewport"]
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/Node3D"]
+transform = Transform3D(0.99901867, -0.017734326, -0.04058521, 0.031664114, 0.92668927, 0.3744919, 0.030968515, -0.3754096, 0.92634153, -0.04768634, 1.3427916, 2.1877308)
+fov = 54.22209
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport/Node3D"]
+transform = Transform3D(0.5957489, -0.30033904, 0.7449023, 0.18919292, 0.95383054, 0.2332669, -0.7805698, 0.0019617751, 0.6250655, 0, 0.68549645, -0.052994013)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Node3D"]
+mesh = SubResource("BoxMesh_ymvf6")
 
 [connection signal="pressed" from="btn_prox_pagina" to="btn_prox_pagina" method="_on_pressed"]
 [connection signal="pressed" from="btn_som" to="btn_som" method="_on_pressed"]

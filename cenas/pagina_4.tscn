@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bgmwn0g7uk6m0"]
+[gd_scene load_steps=13 format=3 uid="uid://bgmwn0g7uk6m0"]
 
 [ext_resource type="Texture2D" uid="uid://cq6p4ua3h27cg" path="res://assets/imagens/bg_pagina_4.png" id="1_sd0e6"]
 [ext_resource type="Texture2D" uid="uid://bxgep0gwfw4r0" path="res://assets/imagens/btn_prox_pagina.png" id="2_4kjwo"]
@@ -10,9 +10,7 @@
 [ext_resource type="Script" uid="uid://s1xo5kem3d4k" path="res://scripts/btn_pag_anterior.gd" id="7_a4um2"]
 [ext_resource type="Script" uid="uid://d2187rgv385j5" path="res://scripts/audio_stream_player.gd" id="7_o662s"]
 [ext_resource type="Script" uid="uid://bjkmje3okkyxo" path="res://scripts/video_stream_player.gd" id="10_q8mvo"]
-[ext_resource type="Texture2D" uid="uid://c0o435n1kqd3s" path="res://assets/imagens/btn_pause.png" id="10_v7gu1"]
 [ext_resource type="Texture2D" uid="uid://bwnyxb54s3fee" path="res://assets/imagens/btn_play.png" id="11_q8mvo"]
-[ext_resource type="Texture2D" uid="uid://q5mci3rn8n7o" path="res://assets/imagens/btn_stop.png" id="13_2bu0c"]
 
 [sub_resource type="VideoStreamTheora" id="VideoStreamTheora_kimfi"]
 file = "res://assets/videos/empirismo-video.ogg"
@@ -62,27 +60,14 @@ offset_bottom = 570.0
 stream = SubResource("VideoStreamTheora_kimfi")
 script = ExtResource("10_q8mvo")
 
-[node name="btn_pause" type="TouchScreenButton" parent="."]
-position = Vector2(427.00003, 475)
-scale = Vector2(0.18359375, 0.17578124)
-texture_normal = ExtResource("10_v7gu1")
-
 [node name="btn_play" type="TouchScreenButton" parent="."]
 position = Vector2(324, 477)
 scale = Vector2(0.1796875, 0.16992188)
 texture_normal = ExtResource("11_q8mvo")
 
-[node name="btn_stop" type="TouchScreenButton" parent="."]
-position = Vector2(219.00002, 477)
-scale = Vector2(0.1875, 0.17578125)
-texture_normal = ExtResource("13_2bu0c")
-
 [connection signal="pressed" from="btn_prox_pagina" to="btn_prox_pagina" method="_on_pressed"]
 [connection signal="pressed" from="btn_som" to="btn_som" method="_on_pressed"]
 [connection signal="pressed" from="btn_som" to="AudioStreamPlayer" method="_on_btn_som_pressed"]
-[connection signal="finished" from="AudioStreamPlayer" to="btn_som" method="_on_audio_stream_player_finished"]
 [connection signal="ready" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_ready"]
 [connection signal="pressed" from="btn_pag_anterior" to="btn_pag_anterior" method="_on_pressed"]
-[connection signal="pressed" from="btn_pause" to="VideoStreamPlayer" method="_on_btn_pause_pressed"]
 [connection signal="pressed" from="btn_play" to="VideoStreamPlayer" method="_on_btn_play_pressed"]
-[connection signal="pressed" from="btn_stop" to="VideoStreamPlayer" method="_on_btn_stop_pressed"]
