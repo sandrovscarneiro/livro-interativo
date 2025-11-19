@@ -4,6 +4,7 @@ const list_icons: Array = [preload("res://assets/imagens/btn_som_ligar.png"), pr
 const list_texts: Array = ["Ligar Som", "Desligar Som"]
 
 
+
 func _ready() -> void:
 	texture_normal = list_icons[int(Globals.play_sound)]
 	$Label.text = list_texts[int(Globals.play_sound)]
