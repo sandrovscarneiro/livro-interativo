@@ -1,3 +1,3 @@
 extends Node
 
-var play_sound:bool = true;
+var play_sound:bool = false;

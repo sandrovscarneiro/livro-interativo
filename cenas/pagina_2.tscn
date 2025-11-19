@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cjy48mg4v765n"]
+[gd_scene load_steps=19 format=3 uid="uid://cjy48mg4v765n"]
 
 [ext_resource type="Texture2D" uid="uid://kyuhemy4o2en" path="res://assets/imagens/bg_pagina_2.png" id="1_2ft2w"]
 [ext_resource type="Texture2D" uid="uid://bxgep0gwfw4r0" path="res://assets/imagens/btn_prox_pagina.png" id="2_p47bp"]
@@ -10,6 +10,8 @@
 [ext_resource type="Script" uid="uid://d2187rgv385j5" path="res://scripts/audio_stream_player.gd" id="7_3uo2l"]
 [ext_resource type="Script" uid="uid://s1xo5kem3d4k" path="res://scripts/btn_pag_anterior.gd" id="7_ec4tr"]
 [ext_resource type="Texture2D" uid="uid://cq3onv7tr67hb" path="res://assets/imagens/pagina_2_cabeca.png" id="10_3uo2l"]
+[ext_resource type="Texture2D" uid="uid://dlmblepnq3sjw" path="res://icon.svg" id="11_n4upd"]
+[ext_resource type="Script" uid="uid://c0bknqfyf12kt" path="res://cenas/rigid_body_2d.gd" id="11_tnqoo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n4upd"]
 size = Vector2(118.000015, 54.25)
@@ -19,12 +21,16 @@ size = Vector2(118.000015, 54.25)
 [sub_resource type="LabelSettings" id="LabelSettings_3uo2l"]
 font_color = Color(0, 0, 0, 1)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3uo2l"]
-size = Vector2(79, 68.5)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_n4upd"]
+a = Vector2(11.5, -39.75)
+b = Vector2(66.5, -96.75)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_3uo2l"]
 a = Vector2(38, 169)
 b = Vector2(-11, 109)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tnqoo"]
+size = Vector2(53.5, 76)
 
 [node name="Pagina2" type="Node2D"]
 
@@ -75,30 +81,64 @@ position = Vector2(38, 39.125)
 shape = SubResource("RectangleShape2D_n4upd")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2(-30, 0)
+position = Vector2(377, 88)
+script = ExtResource("11_tnqoo")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(1, -10)
+scale = Vector2(0.375, 0.4296875)
+texture = ExtResource("11_n4upd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(368, 80)
+position = Vector2(1, -3)
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_tnqoo")
 
 [node name="Label" type="Label" parent="RigidBody2D"]
-offset_left = 332.0
-offset_top = 68.0
-offset_right = 405.0
-offset_bottom = 91.0
+offset_left = -35.0
+offset_top = -17.0
+offset_right = 38.0
+offset_bottom = 6.0
 text = "Evidência"
 label_settings = SubResource("LabelSettings_3uo2l")
+metadata/_edit_use_anchors_ = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(382.5, 352.75)
-shape = SubResource("RectangleShape2D_3uo2l")
+shape = SubResource("SegmentShape2D_n4upd")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(324, 149)
 shape = SubResource("SegmentShape2D_3uo2l")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(380.25, 352)
+shape = SubResource("RectangleShape2D_tnqoo")
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="."]
+position = Vector2(377, 88)
+script = ExtResource("11_tnqoo")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D2"]
+position = Vector2(1, -10)
+scale = Vector2(0.375, 0.4296875)
+texture = ExtResource("11_n4upd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
+position = Vector2(1, -3)
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_tnqoo")
+
+[node name="Label" type="Label" parent="RigidBody2D2"]
+offset_left = -35.0
+offset_top = -17.0
+offset_right = 38.0
+offset_bottom = 6.0
+text = "Evidência"
+label_settings = SubResource("LabelSettings_3uo2l")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="btn_prox_pagina" to="btn_prox_pagina" method="_on_pressed"]
 [connection signal="pressed" from="btn_som" to="btn_som" method="_on_pressed"]
@@ -106,3 +146,4 @@ shape = SubResource("SegmentShape2D_3uo2l")
 [connection signal="finished" from="AudioStreamPlayer" to="btn_som" method="_on_audio_stream_player_finished"]
 [connection signal="ready" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_ready"]
 [connection signal="pressed" from="btn_pag_anterior" to="btn_pag_anterior" method="_on_pressed"]
+[connection signal="body_entered" from="Area2D" to="RigidBody2D" method="_on_area_2d_body_entered"]
