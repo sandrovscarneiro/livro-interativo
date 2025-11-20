@@ -25,7 +25,7 @@ func _ready():
 func _input(event):
 
 	# Clique na colher
-	if event is InputEventMouseButton:
+	if event is InputEventScreenTouch:
 		if event.pressed:
 			if colher.get_rect().has_point(colher.to_local(event.position)):
 				arrastando = true
@@ -34,7 +34,7 @@ func _input(event):
 			arrastando = false
 
 	# Arrastar apenas na vertical
-	if arrastando and event is InputEventMouseMotion:
+	if arrastando and event is InputEventScreenDrag:
 		var novo_y = event.position.y + offset
 
 		# Impedir que passe da linha da água para baixo

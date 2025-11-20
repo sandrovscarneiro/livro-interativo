@@ -25,6 +25,6 @@ func _input(event):
 		rotation.y = yaw      # gira o pivot (horizontal)
 		cam.rotation.x = pitch # gira a camera (vertical)
 
-func _process(delta):
+func _process(_delta):
 	print("Pivot rot:", rotation)
 	print("Camera rot:", cam.rotation)

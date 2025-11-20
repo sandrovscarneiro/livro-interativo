@@ -8,8 +8,9 @@ func _physics_process(_delta: float) -> void:
 	apply_central_force(tilt)
 
 func _on_area_2d_body_entered(body) -> void:
-	if body is RigidBody2D:
+	if body == self:
 		body.label.text = "Verdade"
+		body.set_physics_process(false)
 
 		
 	
