@@ -4,7 +4,8 @@ extends Control
 
 func _process(_delta: float) -> void:
 	accelerometer_values = Input.get_accelerometer()
-	$ball.x += accelerometer_values.x
-	$ball.y += accelerometer_values.y
+	$Label.text = "X: "+str(accelerometer_values.x)+" Y: "+str(accelerometer_values.y)
+
+	
 	
 	
