@@ -53,11 +53,11 @@ func _process(_delta):
 	# Y real da parte de baixo
 	var y_fundo: float = fundo.global_position.y
 
-	var submerso := y_fundo > y_agua
+	var submerso := y_fundo - fundo.get_rect().size.y * fundo.scale.y / 2.0 >= y_agua
 
 	if submerso:
 		# DESLOCAMENTO LEVE APENAS NO X
-		fundo.position.x = lerp(fundo.position.x, pos_normal_x_fundo -18.0, 0.1)
+		fundo.position.x = lerp(fundo.position.x, pos_normal_x_fundo -12.0, 0.1)
 
 		# PEQUENA rotação adicional
 		fundo.rotation = lerp(fundo.rotation, rotacao_normal_fundo + deg_to_rad(8), 0.1)

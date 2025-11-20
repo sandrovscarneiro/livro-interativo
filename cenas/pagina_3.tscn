@@ -53,7 +53,7 @@ script = ExtResource("7_0xs00")
 path_pag_anterior = "res://cenas/pagina_2.tscn"
 
 [node name="Colher" type="Sprite2D" parent="."]
-position = Vector2(599, 180.99998)
+position = Vector2(469, 301)
 scale = Vector2(1, 1.7656249)
 texture = ExtResource("11_le54s")
 
@@ -76,13 +76,28 @@ region_enabled = true
 region_rect = Rect2(0, 0, 600, 320)
 
 [node name="LinhaDaAgua" type="Node2D" parent="."]
-position = Vector2(264, 329)
-scale = Vector2(10, 1)
+position = Vector2(420.00003, 420)
+rotation = 0.017453292
+scale = Vector2(11, 1)
 
 [node name="ColorRect" type="ColorRect" parent="LinhaDaAgua"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -7.181819
+offset_top = -2.0
+offset_right = 6.9181833
+offset_bottom = 2.0
+rotation = 0.017453292
 color = Color(0.20392157, 1, 1, 0.6392157)
+metadata/_edit_use_anchors_ = true
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(214, 76)
+color = Color(0.3137255, 1, 1, 0.59607846)
+polygon = PackedVector2Array(150, 492, 203, 503, 251, 492, 279, 347, 202, 346, 129, 345)
+
+[node name="Line2D" type="Line2D" parent="Polygon2D"]
+points = PackedVector2Array(150, 492, 203, 503, 251, 492, 282, 343, 126, 340, 150, 492)
+width = 5.0
+default_color = Color(0, 0, 0, 1)
 
 [connection signal="pressed" from="btn_prox_pagina" to="btn_prox_pagina" method="_on_pressed"]
 [connection signal="pressed" from="btn_som" to="btn_som" method="_on_pressed"]
