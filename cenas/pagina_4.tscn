@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bwnyxb54s3fee" path="res://assets/imagens/btn_play.png" id="11_q8mvo"]
 
 [sub_resource type="VideoStreamTheora" id="VideoStreamTheora_kimfi"]
-file = "res://assets/videos/empirismo-video.ogg"
+file = "res://assets/videos/empirismo-video.ogv"
 
 [node name="Pagina4" type="Node2D"]
 
