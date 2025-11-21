@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dknoq05w3e2fh"]
+[gd_scene load_steps=14 format=3 uid="uid://dknoq05w3e2fh"]
 
 [ext_resource type="Texture2D" uid="uid://b7trc53m63w71" path="res://assets/imagens/bg_pagina_7.png" id="1_5n0kc"]
 [ext_resource type="Texture2D" uid="uid://bxgep0gwfw4r0" path="res://assets/imagens/btn_prox_pagina.png" id="2_7w17q"]
@@ -9,9 +9,12 @@
 [ext_resource type="Script" uid="uid://ealxwk1jt2js" path="res://scripts/btn_som.gd" id="5_ymvf6"]
 [ext_resource type="Script" uid="uid://d2187rgv385j5" path="res://scripts/audio_stream_player.gd" id="7_1lhl4"]
 [ext_resource type="Script" uid="uid://s1xo5kem3d4k" path="res://scripts/btn_pag_anterior.gd" id="7_fsfl7"]
-[ext_resource type="Script" uid="uid://4ounkdvpclir" path="res://scripts/node_3d.gd" id="10_1lhl4"]
+[ext_resource type="Script" uid="uid://c3kugbm7rosfv" path="res://scripts/pivot.gd" id="10_1lhl4"]
+[ext_resource type="PackedScene" uid="uid://c224xclkirp65" path="res://assets/imagens/Angry Point.fbx" id="11_ty1k5"]
+[ext_resource type="Texture2D" uid="uid://j46kp7y61uoe" path="res://assets/imagens/speech-bubble.png" id="12_4su6q"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_ymvf6"]
+[sub_resource type="Environment" id="Environment_ty1k5"]
+background_mode = 2
 
 [node name="Pagina7" type="Node2D"]
 
@@ -67,15 +70,48 @@ render_target_update_mode = 4
 script = ExtResource("10_1lhl4")
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/Node3D/pivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3, 8)
-current = true
-fov = 54.22209
+transform = Transform3D(1, 0, 0, 0, 0.9626256, 0.27083567, 0, -0.27083567, 0.9626256, 0, 1.5, 2.5)
+fov = 110.0
+
+[node name="number" type="Label3D" parent="SubViewportContainer/SubViewport/Node3D"]
+transform = Transform3D(-4.371139e-08, -0.99999994, 0, 1.1924881e-08, -5.21253e-16, 0.99999994, -1, 4.3711385e-08, 1.192488e-08, 0, -0.5, 0)
+text = "6"
+font_size = 512
+outline_size = 64
+
+[node name="man_1" parent="SubViewportContainer/SubViewport/Node3D" instance=ExtResource("11_ty1k5")]
+transform = Transform3D(-15.000001, 0, 25.98076, 0, 29.999998, 0, -25.98076, 0, -15.000001, -2.5, 0, 0.5)
+
+[node name="man_2" parent="SubViewportContainer/SubViewport/Node3D" instance=ExtResource("11_ty1k5")]
+transform = Transform3D(-15.000002, 0, -25.980762, 0, 29.999998, 0, 25.980762, 0, -15.000002, 2.5, 0, 0.5)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport/Node3D"]
+environment = SubResource("Environment_ty1k5")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport/Node3D"]
-transform = Transform3D(0.5957489, -0.30033904, 0.7449023, 0.18919292, 0.95383054, 0.2332669, -0.7805698, 0.0019617751, 0.6250655, 0, 0.68549645, -0.052994013)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Node3D"]
-mesh = SubResource("BoxMesh_ymvf6")
+[node name="bubble" type="Sprite3D" parent="SubViewportContainer/SubViewport/Node3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 2.2, 1, 0)
+texture = ExtResource("12_4su6q")
+
+[node name="Label3D" type="Label3D" parent="SubViewportContainer/SubViewport/Node3D/bubble"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5587826, -1.521944, 0)
+billboard = 1
+text = "6
+
+"
+font_size = 512
+
+[node name="bubble2" type="Sprite3D" parent="SubViewportContainer/SubViewport/Node3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -2, 1, 0)
+flip_h = true
+texture = ExtResource("12_4su6q")
+
+[node name="Label3D" type="Label3D" parent="SubViewportContainer/SubViewport/Node3D/bubble2"]
+billboard = 1
+text = "9
+"
+font_size = 512
 
 [connection signal="pressed" from="btn_prox_pagina" to="btn_prox_pagina" method="_on_pressed"]
 [connection signal="pressed" from="btn_som" to="btn_som" method="_on_pressed"]
