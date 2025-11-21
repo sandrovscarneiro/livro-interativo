@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cjy48mg4v765n"]
+[gd_scene load_steps=22 format=3 uid="uid://cjy48mg4v765n"]
 
 [ext_resource type="Texture2D" uid="uid://kyuhemy4o2en" path="res://assets/imagens/bg_pagina_2.png" id="1_2ft2w"]
 [ext_resource type="Texture2D" uid="uid://bxgep0gwfw4r0" path="res://assets/imagens/btn_prox_pagina.png" id="2_p47bp"]
@@ -16,7 +16,7 @@
 [ext_resource type="Script" uid="uid://dwih5jyosffj7" path="res://scripts/label.gd" id="14_puko7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n4upd"]
-size = Vector2(151, 63)
+size = Vector2(168, 74)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tnqoo"]
 size = Vector2(59, 138)
@@ -31,6 +31,10 @@ size = Vector2(329, 1038)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fvf0m"]
 size = Vector2(772.5, 175.5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_puko7"]
+font_size = 24
+font_color = Color(0.7943986, 3.2247603e-06, 9.62615e-07, 1)
 
 [node name="Pagina2" type="Node2D"]
 
@@ -73,7 +77,7 @@ path_pag_anterior = "res://capa.tscn"
 position = Vector2(342, 250)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(41.5, 37.5)
+position = Vector2(36, 32)
 shape = SubResource("RectangleShape2D_n4upd")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -84,13 +88,15 @@ scale = Vector2(1.4, 1.4)
 position = Vector2(404, 368)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("10_3uo2l")
+region_enabled = true
+region_rect = Rect2(64, 0, 1216, 768)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(378.5, 390)
 shape = SubResource("RectangleShape2D_tnqoo")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(252, 458, 491, 462, 408, 417, 408, 375, 435, 339, 445, 288, 438, 274, 413, 288, 396, 314, 378, 318, 362, 316, 341, 295, 320, 277, 307, 277, 312, 322, 327, 357, 344, 373, 344, 407, 302, 431, 258, 454, 250, 460)
+polygon = PackedVector2Array(259.2857, 460.71426, 488.5714, 459.99997, 449.99997, 436.42856, 409.2857, 416.42856, 407.14285, 377.85712, 424.2857, 361.42856, 435, 339, 445, 288, 443.5714, 277.14285, 438, 274, 423.5714, 280.71426, 412.85712, 292.85712, 396, 314, 376.42856, 322.14282, 363.5714, 319.2857, 351.42856, 309.99997, 341, 295, 320, 277, 307, 277, 312, 322, 327, 357, 347.85712, 377.85712, 347.85712, 411.42856, 302, 431, 279.99997, 442.85712, 260.71426, 454.99997, 249.99997, 460.71426)
 
 [node name="balls_container" type="Node2D" parent="."]
 
@@ -187,6 +193,7 @@ label_settings = SubResource("LabelSettings_3uo2l")
 metadata/_edit_use_anchors_ = true
 
 [node name="Control" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -216,6 +223,19 @@ shape = SubResource("RectangleShape2D_fvf0m")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="walls"]
 position = Vector2(386, -92)
 shape = SubResource("RectangleShape2D_fvf0m")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -4.0
+offset_top = 785.0
+offset_right = 778.0
+offset_bottom = 893.0
+text = "Incline seu dispositivo para mover as evidências da razão (bolas)
+à cabeça do homem e visualizar elas se transformarem 
+em verdades"
+label_settings = SubResource("LabelSettings_puko7")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
 
 [connection signal="pressed" from="btn_prox_pagina" to="btn_prox_pagina" method="_on_pressed"]
 [connection signal="pressed" from="btn_som" to="btn_som" method="_on_pressed"]

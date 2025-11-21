@@ -62,11 +62,12 @@ size = Vector2i(636, 276)
 render_target_update_mode = 4
 
 [node name="Node3D" type="Node3D" parent="SubViewportContainer/SubViewport"]
-rotation_order = 0
+
+[node name="pivot" type="Node3D" parent="SubViewportContainer/SubViewport/Node3D"]
 script = ExtResource("10_1lhl4")
 
-[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 0.95968765, 0.2810687, 0, -0.28106877, 0.9596877, 0, 0.8031956, 2.821689)
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/Node3D/pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3, 8)
 current = true
 fov = 54.22209
 

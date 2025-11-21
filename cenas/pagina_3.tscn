@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cywl3mj2n6gar"]
+[gd_scene load_steps=14 format=3 uid="uid://cywl3mj2n6gar"]
 
 [ext_resource type="Script" uid="uid://bnw1uewgtb1lm" path="res://scripts/pagina_3.gd" id="1_pd201"]
 [ext_resource type="Texture2D" uid="uid://dldc03opomxnx" path="res://assets/imagens/bg_pagina_3.png" id="1_q0i82"]
@@ -12,6 +12,10 @@
 [ext_resource type="Script" uid="uid://d2187rgv385j5" path="res://scripts/audio_stream_player.gd" id="7_riero"]
 [ext_resource type="Texture2D" uid="uid://dlmblepnq3sjw" path="res://icon.svg" id="11_le54s"]
 [ext_resource type="Texture2D" uid="uid://lhq2huql8yrn" path="res://assets/imagens/colher.png" id="11_oshyj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_puko7"]
+font_size = 24
+font_color = Color(0.7943986, 3.2247603e-06, 9.62615e-07, 1)
 
 [node name="Pagina3" type="Node2D"]
 script = ExtResource("1_pd201")
@@ -95,9 +99,18 @@ color = Color(0.3137255, 1, 1, 0.59607846)
 polygon = PackedVector2Array(150, 492, 203, 503, 251, 492, 279, 347, 202, 346, 129, 345)
 
 [node name="Line2D" type="Line2D" parent="Polygon2D"]
-points = PackedVector2Array(150, 492, 203, 503, 251, 492, 282, 343, 126, 340, 150, 492)
+points = PackedVector2Array(150, 492, 173, 499, 203, 503, 230, 500, 251, 492, 282, 343, 126, 340, 150, 492)
 width = 5.0
 default_color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 40.0
+offset_top = 861.0
+offset_right = 738.0
+offset_bottom = 932.0
+text = "Arraste a colher para a água para visualizar ela ficando torta"
+label_settings = SubResource("LabelSettings_puko7")
+horizontal_alignment = 1
 
 [connection signal="pressed" from="btn_prox_pagina" to="btn_prox_pagina" method="_on_pressed"]
 [connection signal="pressed" from="btn_som" to="btn_som" method="_on_pressed"]

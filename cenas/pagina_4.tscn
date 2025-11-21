@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bgmwn0g7uk6m0"]
+[gd_scene load_steps=14 format=3 uid="uid://bgmwn0g7uk6m0"]
 
 [ext_resource type="Texture2D" uid="uid://cq6p4ua3h27cg" path="res://assets/imagens/bg_pagina_4.png" id="1_sd0e6"]
 [ext_resource type="Texture2D" uid="uid://bxgep0gwfw4r0" path="res://assets/imagens/btn_prox_pagina.png" id="2_4kjwo"]
@@ -14,6 +14,10 @@
 
 [sub_resource type="VideoStreamTheora" id="VideoStreamTheora_kimfi"]
 file = "res://assets/videos/empirismo-video.ogv"
+
+[sub_resource type="LabelSettings" id="LabelSettings_puko7"]
+font_size = 24
+font_color = Color(0.7943986, 3.2247603e-06, 9.62615e-07, 1)
 
 [node name="Pagina4" type="Node2D"]
 
@@ -64,6 +68,16 @@ script = ExtResource("10_q8mvo")
 position = Vector2(324, 477)
 scale = Vector2(0.1796875, 0.16992188)
 texture_normal = ExtResource("11_q8mvo")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1.0
+offset_top = 820.0
+offset_right = 767.0
+offset_bottom = 891.0
+text = "Clique no botão de play para assistir o professor 
+Francisco Porfírio ensinar sobre o empirismo"
+label_settings = SubResource("LabelSettings_puko7")
+horizontal_alignment = 1
 
 [connection signal="pressed" from="btn_prox_pagina" to="btn_prox_pagina" method="_on_pressed"]
 [connection signal="pressed" from="btn_som" to="btn_som" method="_on_pressed"]
