@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://rhdathwpo43c"]
+[gd_scene load_steps=19 format=3 uid="uid://rhdathwpo43c"]
 
-[ext_resource type="Texture2D" uid="uid://2pxo7hgjmu6x" path="res://assets/imagens/bg_pagina_5.png" id="1_266wy"]
+[ext_resource type="Texture2D" uid="uid://cq6p4ua3h27cg" path="res://assets/imagens/bg_pagina_4.png" id="1_dyob2"]
 [ext_resource type="Texture2D" uid="uid://bxgep0gwfw4r0" path="res://assets/imagens/btn_prox_pagina.png" id="2_sfyh7"]
 [ext_resource type="Texture2D" uid="uid://cgb200g3bj7dc" path="res://assets/imagens/btn_som_desligar.png" id="3_3tj36"]
 [ext_resource type="Script" uid="uid://djngjiov5euex" path="res://scripts/btn_prox_pagina.gd" id="3_r83hw"]
@@ -9,12 +9,28 @@
 [ext_resource type="Texture2D" uid="uid://5sjqrctvhdrp" path="res://assets/imagens/btn_pag_anterior.png" id="5_sfyh7"]
 [ext_resource type="Script" uid="uid://s1xo5kem3d4k" path="res://scripts/btn_pag_anterior.gd" id="7_h011n"]
 [ext_resource type="Script" uid="uid://d2187rgv385j5" path="res://scripts/audio_stream_player.gd" id="7_i3tna"]
+[ext_resource type="Texture2D" uid="uid://boh67o3fdol2j" path="res://assets/imagens/johnlocke.png" id="10_i3tna"]
+[ext_resource type="Texture2D" uid="uid://bpya0ywh6gp6a" path="res://assets/imagens/orelha.png" id="11_4wnhj"]
+[ext_resource type="Texture2D" uid="uid://crf1u446bhsoi" path="res://assets/imagens/boca.png" id="12_r6j27"]
+[ext_resource type="Texture2D" uid="uid://bnb565kh41n37" path="res://assets/imagens/olho.png" id="13_5ieun"]
+[ext_resource type="Texture2D" uid="uid://w771s64afmvk" path="res://assets/imagens/mao.png" id="14_3228g"]
+[ext_resource type="Texture2D" uid="uid://bu7qiwjm33fg5" path="res://assets/imagens/nariz.png" id="15_x2477"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wnhj"]
+size = Vector2(109.16672, 70)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8yqdp"]
+font_size = 36
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7a1e6"]
+size = Vector2(51.25, 49)
 
 [node name="Pagina5" type="Node2D"]
 
 [node name="background" type="Sprite2D" parent="."]
 position = Vector2(384, 512)
-texture = ExtResource("1_266wy")
+texture = ExtResource("1_dyob2")
 
 [node name="btn_prox_pagina" type="TouchScreenButton" parent="."]
 position = Vector2(580, 919)
@@ -46,6 +62,88 @@ position = Vector2(30, 919)
 texture_normal = ExtResource("5_sfyh7")
 script = ExtResource("7_h011n")
 path_pag_anterior = "res://cenas/pagina_4.tscn"
+
+[node name="john_locke" type="Sprite2D" parent="."]
+position = Vector2(402, 325)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("10_i3tna")
+
+[node name="Area2D" type="Area2D" parent="john_locke"]
+position = Vector2(160, 95)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="john_locke/Area2D"]
+position = Vector2(-13.75, 0)
+shape = SubResource("RectangleShape2D_4wnhj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 247.0
+offset_top = 455.0
+offset_right = 517.0
+offset_bottom = 500.0
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = -6.0
+offset_right = 236.0
+offset_bottom = 44.0
+text = "John Locke"
+label_settings = SubResource("LabelSettings_8yqdp")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(565, 325)
+shape = SubResource("RectangleShape2D_7a1e6")
+
+[node name="Orelha" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(567, 323)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("11_4wnhj")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(524, 258)
+shape = SubResource("RectangleShape2D_7a1e6")
+
+[node name="Boca" type="Sprite2D" parent="StaticBody2D2"]
+position = Vector2(524, 257)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("12_r6j27")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(281, 252)
+shape = SubResource("RectangleShape2D_7a1e6")
+
+[node name="Olho" type="Sprite2D" parent="StaticBody2D3"]
+position = Vector2(278, 253)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("13_5ieun")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+
+[node name="Mao" type="Sprite2D" parent="StaticBody2D4"]
+position = Vector2(578, 395)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("14_3228g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(580, 397)
+shape = SubResource("RectangleShape2D_7a1e6")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(243.625, 382)
+shape = SubResource("RectangleShape2D_7a1e6")
+
+[node name="Nariz" type="Sprite2D" parent="StaticBody2D5"]
+position = Vector2(244, 388)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("15_x2477")
 
 [connection signal="pressed" from="btn_prox_pagina" to="btn_prox_pagina" method="_on_pressed"]
 [connection signal="pressed" from="btn_som" to="btn_som" method="_on_pressed"]
