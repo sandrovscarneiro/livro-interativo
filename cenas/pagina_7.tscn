@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dknoq05w3e2fh"]
+[gd_scene load_steps=15 format=3 uid="uid://dknoq05w3e2fh"]
 
 [ext_resource type="Texture2D" uid="uid://b7trc53m63w71" path="res://assets/imagens/bg_pagina_7.png" id="1_5n0kc"]
 [ext_resource type="Texture2D" uid="uid://bxgep0gwfw4r0" path="res://assets/imagens/btn_prox_pagina.png" id="2_7w17q"]
@@ -15,6 +15,10 @@
 
 [sub_resource type="Environment" id="Environment_ty1k5"]
 background_mode = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_4su6q"]
+font_size = 24
+font_color = Color(0.8288101, 2.7193873e-06, 5.7756904e-07, 1)
 
 [node name="Pagina7" type="Node2D"]
 
@@ -112,6 +116,18 @@ billboard = 1
 text = "9
 "
 font_size = 512
+
+[node name="Label" type="Label" parent="."]
+offset_left = -257.0
+offset_top = 786.0
+offset_right = 1030.0
+offset_bottom = 927.0
+text = "A verdade é uma construção humana!
+ Arraste o dedo para movimentar a câmera
+e ver a verdade sobre o número sob as diferentes perspectivas."
+label_settings = SubResource("LabelSettings_4su6q")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="btn_prox_pagina" to="btn_prox_pagina" method="_on_pressed"]
 [connection signal="pressed" from="btn_som" to="btn_som" method="_on_pressed"]
