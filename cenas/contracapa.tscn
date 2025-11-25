@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://ct3iipwyh3wki" path="res://scripts/btn_voltar_inicio.gd" id="5_lfdvd"]
 [ext_resource type="Texture2D" uid="uid://cgb200g3bj7dc" path="res://assets/imagens/btn_som_desligar.png" id="6_27nbg"]
 [ext_resource type="Script" uid="uid://ealxwk1jt2js" path="res://scripts/btn_som.gd" id="7_dyo67"]
-[ext_resource type="AudioStream" uid="uid://mghxy45xbcms" path="res://assets/sons/capa.mp3" id="8_53exu"]
+[ext_resource type="AudioStream" uid="uid://dgxp77dfmxoe1" path="res://assets/sons/contracapa.mp3" id="8_27nbg"]
 [ext_resource type="Script" uid="uid://d2187rgv385j5" path="res://scripts/audio_stream_player.gd" id="9_wwfav"]
 
 [node name="Contracapa" type="Node2D"]
@@ -44,7 +44,7 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_53exu")
+stream = ExtResource("8_27nbg")
 script = ExtResource("9_wwfav")
 
 [connection signal="pressed" from="btn_pag_anterior" to="btn_pag_anterior" method="_on_pressed"]
