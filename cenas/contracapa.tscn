@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8sd0ianlcxh3"]
+[gd_scene load_steps=10 format=3 uid="uid://b8sd0ianlcxh3"]
 
 [ext_resource type="Texture2D" uid="uid://dnw50s3ggjors" path="res://assets/imagens/bg_contracapa.png" id="1_w6bo8"]
 [ext_resource type="Texture2D" uid="uid://5sjqrctvhdrp" path="res://assets/imagens/btn_pag_anterior.png" id="2_8jqna"]
 [ext_resource type="Script" uid="uid://s1xo5kem3d4k" path="res://scripts/btn_pag_anterior.gd" id="3_p1ffv"]
 [ext_resource type="Texture2D" uid="uid://cnnyfhc4qwn7l" path="res://assets/imagens/btn_voltar_inicio.png" id="3_vmx3j"]
 [ext_resource type="Script" uid="uid://ct3iipwyh3wki" path="res://scripts/btn_voltar_inicio.gd" id="5_lfdvd"]
+[ext_resource type="Texture2D" uid="uid://cgb200g3bj7dc" path="res://assets/imagens/btn_som_desligar.png" id="6_27nbg"]
+[ext_resource type="Script" uid="uid://ealxwk1jt2js" path="res://scripts/btn_som.gd" id="7_dyo67"]
+[ext_resource type="AudioStream" uid="uid://mghxy45xbcms" path="res://assets/sons/capa.mp3" id="8_53exu"]
+[ext_resource type="Script" uid="uid://d2187rgv385j5" path="res://scripts/audio_stream_player.gd" id="9_wwfav"]
 
 [node name="Contracapa" type="Node2D"]
 
@@ -23,5 +27,28 @@ position = Vector2(580, 919)
 texture_normal = ExtResource("3_vmx3j")
 script = ExtResource("5_lfdvd")
 
+[node name="btn_som" type="TouchScreenButton" parent="."]
+position = Vector2(643, 24)
+texture_normal = ExtResource("6_27nbg")
+script = ExtResource("7_dyo67")
+
+[node name="Label" type="Label" parent="btn_som"]
+offset_left = -18.0
+offset_top = 69.0
+offset_right = 74.0
+offset_bottom = 92.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Placeholder"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_53exu")
+script = ExtResource("9_wwfav")
+
 [connection signal="pressed" from="btn_pag_anterior" to="btn_pag_anterior" method="_on_pressed"]
 [connection signal="pressed" from="btn_voltar_inicio" to="btn_voltar_inicio" method="_on_pressed"]
+[connection signal="pressed" from="btn_som" to="btn_som" method="_on_pressed"]
+[connection signal="ready" from="btn_som" to="btn_som" method="_on_ready"]
+[connection signal="ready" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_ready"]
