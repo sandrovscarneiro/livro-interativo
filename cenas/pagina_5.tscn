@@ -1,6 +1,7 @@
-[gd_scene load_steps=30 format=3 uid="uid://rhdathwpo43c"]
+[gd_scene load_steps=32 format=3 uid="uid://rhdathwpo43c"]
 
 [ext_resource type="Texture2D" uid="uid://cq6p4ua3h27cg" path="res://assets/imagens/bg_pagina_5.png" id="1_dyob2"]
+[ext_resource type="Script" uid="uid://c4y1bet1s24hl" path="res://scripts/pagina_5.gd" id="1_r6j27"]
 [ext_resource type="Texture2D" uid="uid://bxgep0gwfw4r0" path="res://assets/imagens/btn_prox_pagina.png" id="2_sfyh7"]
 [ext_resource type="Texture2D" uid="uid://cgb200g3bj7dc" path="res://assets/imagens/btn_som_desligar.png" id="3_3tj36"]
 [ext_resource type="Script" uid="uid://djngjiov5euex" path="res://scripts/btn_prox_pagina.gd" id="3_r83hw"]
@@ -56,7 +57,12 @@ font_color = Color(0, 0, 0, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ieun"]
 size = Vector2(600, 500)
 
+[sub_resource type="LabelSettings" id="LabelSettings_scblh"]
+font_size = 24
+font_color = Color(1, 0, 0, 1)
+
 [node name="Pagina5" type="Node2D"]
+script = ExtResource("1_r6j27")
 
 [node name="background" type="Sprite2D" parent="."]
 position = Vector2(384, 512)
@@ -93,15 +99,11 @@ texture_normal = ExtResource("5_sfyh7")
 script = ExtResource("7_h011n")
 path_pag_anterior = "res://cenas/pagina_4.tscn"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(380, 354)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("12_siyx2")
-
 [node name="Node2D" type="Node2D" parent="."]
 script = ExtResource("15_r6j27")
 
 [node name="Path2D" type="Path2D" parent="Node2D"]
+position = Vector2(-4, 8)
 curve = SubResource("Curve2D_r6j27")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Node2D/Path2D"]
@@ -142,8 +144,13 @@ position = Vector2(699, 205)
 rotation = 1.5120405
 loop = false
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(380, 354)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_siyx2")
+
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(593.5, 395)
+position = Vector2(590, 403)
 scale = Vector2(0.41, 0.5)
 texture = ExtResource("13_0b5nr")
 
@@ -193,12 +200,13 @@ script = ExtResource("14_0b5nr")
 path = "john_locke"
 
 [node name="TouchScreenButton2" type="TouchScreenButton" parent="."]
-position = Vector2(737, 368)
+position = Vector2(737, 380)
 scale = Vector2(0.1, 0.1)
 shape = SubResource("RectangleShape2D_5ieun")
 script = ExtResource("18_3228g")
 
 [node name="Sprite2D" type="Sprite2D" parent="TouchScreenButton2"]
+position = Vector2(0, -39.999992)
 texture = ExtResource("17_5ieun")
 
 [node name="TouchScreenButton3" type="TouchScreenButton" parent="."]
@@ -228,6 +236,17 @@ script = ExtResource("20_7a1e6")
 
 [node name="Sprite2D" type="Sprite2D" parent="TouchScreenButton5"]
 texture = ExtResource("17_5ieun")
+
+[node name="Label" type="Label" parent="."]
+offset_top = 811.0
+offset_right = 768.0
+offset_bottom = 882.0
+text = "Toque nas alavancas para ativá-las, fazendo com que objetos
+rolem a esteira até as partes do corpo responsáveis pelos 
+sentidos para visualizar como o uso desses sentidos se converte
+no conhecimento."
+label_settings = SubResource("LabelSettings_scblh")
+horizontal_alignment = 1
 
 [connection signal="pressed" from="btn_prox_pagina" to="btn_prox_pagina" method="_on_pressed"]
 [connection signal="pressed" from="btn_som" to="btn_som" method="_on_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bnc1xwt5t6860"]
+[gd_scene load_steps=24 format=3 uid="uid://bnc1xwt5t6860"]
 
 [ext_resource type="Texture2D" uid="uid://uaitmj2vcitf" path="res://assets/imagens/bg_pagina_6.png" id="1_a8pve"]
 [ext_resource type="Script" uid="uid://ed24kxgt2ulf" path="res://scripts/pagina_6.gd" id="1_l37vn"]
@@ -42,6 +42,10 @@ size = Vector2(1646, 183)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l37vn"]
 radius = 4.3566074
+
+[sub_resource type="LabelSettings" id="LabelSettings_an6qp"]
+font_size = 24
+font_color = Color(0.79607844, 0, 0, 1)
 
 [node name="Pagina6" type="Node2D"]
 script = ExtResource("1_l37vn")
@@ -205,6 +209,19 @@ shape = SubResource("CircleShape2D_l37vn")
 position = Vector2(0.9999995, 1.9999999)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_0x6j4")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -25.0
+offset_top = 826.0
+offset_right = 822.0
+offset_bottom = 1045.0
+text = "Utilize múltiplos toques para repelir as bolas a fim de movê-las
+até a caixa. Observe que as bolas nunca conseguem permanecer 
+na caixa Assim como, de acordo com os céticos, 
+o homem nunca consegue
+conhecer a verdade."
+label_settings = SubResource("LabelSettings_an6qp")
+horizontal_alignment = 1
 
 [connection signal="pressed" from="btn_prox_pagina" to="btn_prox_pagina" method="_on_pressed"]
 [connection signal="pressed" from="btn_som" to="btn_som" method="_on_pressed"]

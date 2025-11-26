@@ -118,13 +118,15 @@ text = "9
 font_size = 512
 
 [node name="Label" type="Label" parent="."]
-offset_left = -257.0
-offset_top = 786.0
-offset_right = 1030.0
-offset_bottom = 927.0
-text = "A verdade é uma construção humana!
- Arraste o dedo para movimentar a câmera
-e ver a verdade sobre o número sob as diferentes perspectivas."
+offset_left = -251.0
+offset_top = 802.0
+offset_right = 1036.0
+offset_bottom = 984.0
+text = "A imagem mostra dois homens observando um número, cada um
+visualiza um número diferente baseado na sua posição. Arraste o
+dedo para movimentar a câmera verificando as perspectivas de 
+cada um, observando assim, a 
+relatividade da verdade."
 label_settings = SubResource("LabelSettings_4su6q")
 horizontal_alignment = 1
 vertical_alignment = 1

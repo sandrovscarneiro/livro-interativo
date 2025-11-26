@@ -36,7 +36,7 @@ size = Vector2(772.5, 175.5)
 
 [sub_resource type="LabelSettings" id="LabelSettings_puko7"]
 font_size = 24
-font_color = Color(0.7943986, 3.2247603e-06, 9.62615e-07, 1)
+font_color = Color(0.79607844, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2733"]
 

@@ -14,7 +14,7 @@ func _on_pressed() -> void:
 		var new_sprite = Sprite2D.new()
 		new_sprite.texture = array_icons[rand]
 		new_sprite.apply_scale(Vector2(0.1,0.1))
-		new_sprite.z_index = 0
+		new_sprite.z_index = 5
 		get_parent().get_node("Node2D3/Path2D/PathFollow2D").add_child(new_sprite)
 
 func get_rand():
