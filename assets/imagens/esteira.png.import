@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crf1u446bhsoi"
-path="res://.godot/imported/boca.png-38d2a683b4fdab5673caeba7b769ebc0.ctex"
+uid="uid://bjeyvl0mbe864"
+path="res://.godot/imported/esteira.png-be4b3eaa353b53a25463e8502a17ac41.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imagens/boca.png"
-dest_files=["res://.godot/imported/boca.png-38d2a683b4fdab5673caeba7b769ebc0.ctex"]
+source_file="res://assets/imagens/esteira.png"
+dest_files=["res://.godot/imported/esteira.png-be4b3eaa353b53a25463e8502a17ac41.ctex"]
 
 [params]
 
