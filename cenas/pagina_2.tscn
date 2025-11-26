@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cjy48mg4v765n"]
+[gd_scene load_steps=25 format=3 uid="uid://cjy48mg4v765n"]
 
 [ext_resource type="Texture2D" uid="uid://kyuhemy4o2en" path="res://assets/imagens/bg_pagina_2.png" id="1_2ft2w"]
 [ext_resource type="Texture2D" uid="uid://bxgep0gwfw4r0" path="res://assets/imagens/btn_prox_pagina.png" id="2_p47bp"]
@@ -14,6 +14,8 @@
 [ext_resource type="Script" uid="uid://c0bknqfyf12kt" path="res://scripts/rigid_body_2d.gd" id="11_tnqoo"]
 [ext_resource type="Texture2D" uid="uid://cnx2wnobmxl46" path="res://assets/imagens/circulo.png" id="13_l740b"]
 [ext_resource type="Script" uid="uid://dwih5jyosffj7" path="res://scripts/label.gd" id="14_puko7"]
+[ext_resource type="Script" uid="uid://bi5gdxas8pigm" path="res://scripts/touch_screen_button.gd" id="15_y65ws"]
+[ext_resource type="Texture2D" uid="uid://c8wxrauyslkrn" path="res://assets/imagens/descartes.png" id="16_f7yb7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n4upd"]
 size = Vector2(153, 74)
@@ -35,6 +37,8 @@ size = Vector2(772.5, 175.5)
 [sub_resource type="LabelSettings" id="LabelSettings_puko7"]
 font_size = 24
 font_color = Color(0.7943986, 3.2247603e-06, 9.62615e-07, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2733"]
 
 [node name="Pagina2" type="Node2D"]
 
@@ -237,6 +241,18 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
 
+[node name="descartes" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(220, 549)
+texture = ExtResource("16_f7yb7")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2(204, 716)
+scale = Vector2(10, 1)
+shape = SubResource("RectangleShape2D_d2733")
+script = ExtResource("15_y65ws")
+path = "descartes"
+
 [connection signal="pressed" from="btn_prox_pagina" to="btn_prox_pagina" method="_on_pressed"]
 [connection signal="pressed" from="btn_som" to="btn_som" method="_on_pressed"]
 [connection signal="pressed" from="btn_som" to="AudioStreamPlayer" method="_on_btn_som_pressed"]
@@ -247,3 +263,5 @@ autowrap_mode = 1
 [connection signal="body_entered" from="Area2D" to="balls_container/ball2" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="balls_container/ball3" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="balls_container/ball4" method="_on_area_2d_body_entered"]
+[connection signal="pressed" from="TouchScreenButton" to="TouchScreenButton" method="_on_pressed"]
+[connection signal="released" from="TouchScreenButton" to="TouchScreenButton" method="_on_released"]

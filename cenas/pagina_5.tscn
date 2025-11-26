@@ -105,6 +105,7 @@ position = Vector2(549, 557)
 scale = Vector2(7, 1)
 shape = SubResource("RectangleShape2D_4wnhj")
 script = ExtResource("14_0b5nr")
+path = "john_locke"
 
 [node name="Node2D" type="Node2D" parent="."]
 script = ExtResource("15_r6j27")

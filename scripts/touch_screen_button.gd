@@ -1,14 +1,15 @@
 extends TouchScreenButton
 
-@onready var john_locke = get_parent().get_node("john_locke")
+@export var path: String; 
+@onready var node = get_parent().get_node(path)
 
 
 		
 
 
 func _on_pressed() -> void:
-	john_locke.visible = true
+	node.visible = true
 
 
 func _on_released() -> void:
-	john_locke.visible = false
+	node.visible = false
