@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://rhdathwpo43c"]
+[gd_scene load_steps=30 format=3 uid="uid://rhdathwpo43c"]
 
 [ext_resource type="Texture2D" uid="uid://cq6p4ua3h27cg" path="res://assets/imagens/bg_pagina_5.png" id="1_dyob2"]
 [ext_resource type="Script" uid="uid://c4y1bet1s24hl" path="res://scripts/pagina_5.gd" id="1_r6j27"]
@@ -15,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://b6qusmxahvxl6" path="res://assets/imagens/homem.png" id="12_siyx2"]
 [ext_resource type="Texture2D" uid="uid://bjeyvl0mbe864" path="res://assets/imagens/esteira.png" id="13_0b5nr"]
 [ext_resource type="Script" uid="uid://den2cjqxppdw4" path="res://scripts/node_2d_3.gd" id="13_x2477"]
-[ext_resource type="Script" uid="uid://bi5gdxas8pigm" path="res://scripts/touch_screen_button.gd" id="14_0b5nr"]
 [ext_resource type="Script" uid="uid://24ojxq5dx563" path="res://scripts/node_2d_4.gd" id="14_7a1e6"]
 [ext_resource type="Script" uid="uid://dj4x5uytpkasb" path="res://scripts/node_2d.gd" id="15_r6j27"]
 [ext_resource type="Texture2D" uid="uid://c0rr80p3totuc" path="res://assets/imagens/lever.png" id="17_5ieun"]
@@ -51,8 +50,6 @@ point_count = 4
 [sub_resource type="LabelSettings" id="LabelSettings_8yqdp"]
 font_size = 36
 font_color = Color(0, 0, 0, 1)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wnhj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ieun"]
 size = Vector2(600, 500)
@@ -144,6 +141,27 @@ position = Vector2(699, 205)
 rotation = 1.5120405
 loop = false
 
+[node name="john_locke" type="Sprite2D" parent="."]
+position = Vector2(200, 345)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("10_i3tna")
+
+[node name="ColorRect" type="ColorRect" parent="john_locke"]
+offset_left = -216.66667
+offset_top = 216.66664
+offset_right = 53.33333
+offset_bottom = 261.66663
+scale = Vector2(1.5, 1.5)
+
+[node name="Label" type="Label" parent="john_locke/ColorRect"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = -6.0
+offset_right = 236.0
+offset_bottom = 44.0
+text = "John Locke"
+label_settings = SubResource("LabelSettings_8yqdp")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(380, 354)
 scale = Vector2(0.5, 0.5)
@@ -169,35 +187,6 @@ position = Vector2(167.49998, 348)
 scale = Vector2(0.39285716, 0.5)
 texture = ExtResource("13_0b5nr")
 flip_h = true
-
-[node name="john_locke" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(563, 412.00003)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("10_i3tna")
-
-[node name="ColorRect" type="ColorRect" parent="john_locke"]
-offset_left = -216.66667
-offset_top = 216.66664
-offset_right = 53.33333
-offset_bottom = 261.66663
-scale = Vector2(1.5, 1.5)
-
-[node name="Label" type="Label" parent="john_locke/ColorRect"]
-layout_mode = 0
-offset_left = 48.0
-offset_top = -6.0
-offset_right = 236.0
-offset_bottom = 44.0
-text = "John Locke"
-label_settings = SubResource("LabelSettings_8yqdp")
-
-[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
-position = Vector2(549, 557)
-scale = Vector2(7, 1)
-shape = SubResource("RectangleShape2D_4wnhj")
-script = ExtResource("14_0b5nr")
-path = "john_locke"
 
 [node name="TouchScreenButton2" type="TouchScreenButton" parent="."]
 position = Vector2(737, 380)
@@ -254,8 +243,6 @@ horizontal_alignment = 1
 [connection signal="finished" from="AudioStreamPlayer" to="btn_som" method="_on_audio_stream_player_finished"]
 [connection signal="ready" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_ready"]
 [connection signal="pressed" from="btn_pag_anterior" to="btn_pag_anterior" method="_on_pressed"]
-[connection signal="pressed" from="TouchScreenButton" to="TouchScreenButton" method="_on_pressed"]
-[connection signal="released" from="TouchScreenButton" to="TouchScreenButton" method="_on_released"]
 [connection signal="pressed" from="TouchScreenButton2" to="TouchScreenButton2" method="_on_pressed"]
 [connection signal="pressed" from="TouchScreenButton3" to="TouchScreenButton3" method="_on_pressed"]
 [connection signal="pressed" from="TouchScreenButton4" to="TouchScreenButton4" method="_on_pressed"]

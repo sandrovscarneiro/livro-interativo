@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cjy48mg4v765n"]
+[gd_scene load_steps=24 format=3 uid="uid://cjy48mg4v765n"]
 
 [ext_resource type="Texture2D" uid="uid://kyuhemy4o2en" path="res://assets/imagens/bg_pagina_2.png" id="1_2ft2w"]
 [ext_resource type="Texture2D" uid="uid://bxgep0gwfw4r0" path="res://assets/imagens/btn_prox_pagina.png" id="2_p47bp"]
@@ -14,7 +14,6 @@
 [ext_resource type="Script" uid="uid://c0bknqfyf12kt" path="res://scripts/rigid_body_2d.gd" id="11_tnqoo"]
 [ext_resource type="Texture2D" uid="uid://cnx2wnobmxl46" path="res://assets/imagens/circulo.png" id="13_l740b"]
 [ext_resource type="Script" uid="uid://dwih5jyosffj7" path="res://scripts/label.gd" id="14_puko7"]
-[ext_resource type="Script" uid="uid://bi5gdxas8pigm" path="res://scripts/touch_screen_button.gd" id="15_y65ws"]
 [ext_resource type="Texture2D" uid="uid://c8wxrauyslkrn" path="res://assets/imagens/descartes.png" id="16_f7yb7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n4upd"]
@@ -38,7 +37,9 @@ size = Vector2(772.5, 175.5)
 font_size = 24
 font_color = Color(0.79607844, 0, 0, 1)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2733"]
+[sub_resource type="LabelSettings" id="LabelSettings_y65ws"]
+font_size = 32
+font_color = Color(0, 0, 0, 1)
 
 [node name="Pagina2" type="Node2D"]
 
@@ -81,11 +82,11 @@ path_pag_anterior = "res://capa.tscn"
 position = Vector2(342, 250)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(38.5, 32)
+position = Vector2(212, 39)
 shape = SubResource("RectangleShape2D_n4upd")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(-147, -140)
+position = Vector2(26.999985, -133)
 scale = Vector2(1.4, 1.4)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
@@ -242,16 +243,24 @@ vertical_alignment = 1
 autowrap_mode = 1
 
 [node name="descartes" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(220, 549)
+position = Vector2(256, 383)
+scale = Vector2(0.78, 0.738)
 texture = ExtResource("16_f7yb7")
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
-position = Vector2(204, 716)
-scale = Vector2(10, 1)
-shape = SubResource("RectangleShape2D_d2733")
-script = ExtResource("15_y65ws")
-path = "descartes"
+[node name="ColorRect" type="ColorRect" parent="descartes"]
+offset_left = -191.02565
+offset_top = 144.98645
+offset_right = 142.30772
+offset_bottom = 184.98645
+
+[node name="Label" type="Label" parent="descartes"]
+offset_left = -141.02565
+offset_top = 142.27643
+offset_right = 97.97435
+offset_bottom = 187.27643
+text = "René Descartes"
+label_settings = SubResource("LabelSettings_y65ws")
+horizontal_alignment = 1
 
 [connection signal="pressed" from="btn_prox_pagina" to="btn_prox_pagina" method="_on_pressed"]
 [connection signal="pressed" from="btn_som" to="btn_som" method="_on_pressed"]
@@ -263,5 +272,3 @@ path = "descartes"
 [connection signal="body_entered" from="Area2D" to="balls_container/ball2" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="balls_container/ball3" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="balls_container/ball4" method="_on_area_2d_body_entered"]
-[connection signal="pressed" from="TouchScreenButton" to="TouchScreenButton" method="_on_pressed"]
-[connection signal="released" from="TouchScreenButton" to="TouchScreenButton" method="_on_released"]

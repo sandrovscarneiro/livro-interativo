@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bnc1xwt5t6860"]
+[gd_scene load_steps=28 format=3 uid="uid://bnc1xwt5t6860"]
 
 [ext_resource type="Texture2D" uid="uid://uaitmj2vcitf" path="res://assets/imagens/bg_pagina_6.png" id="1_a8pve"]
 [ext_resource type="Script" uid="uid://ed24kxgt2ulf" path="res://scripts/pagina_6.gd" id="1_l37vn"]
@@ -12,6 +12,8 @@
 [ext_resource type="Script" uid="uid://d2187rgv385j5" path="res://scripts/audio_stream_player.gd" id="7_0x6j4"]
 [ext_resource type="Script" uid="uid://s1xo5kem3d4k" path="res://scripts/btn_pag_anterior.gd" id="7_iwgyl"]
 [ext_resource type="Texture2D" uid="uid://b888ho022fi83" path="res://assets/imagens/caixa.webp" id="12_an6qp"]
+[ext_resource type="Texture2D" uid="uid://dh88helgo0xe0" path="res://assets/imagens/gorgias.png" id="13_sap2c"]
+[ext_resource type="Texture2D" uid="uid://c64ylefr5wd2w" path="res://assets/imagens/pirro.png" id="14_4f0m8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_an6qp"]
 radius = 100.0
@@ -46,6 +48,14 @@ radius = 4.3566074
 [sub_resource type="LabelSettings" id="LabelSettings_an6qp"]
 font_size = 24
 font_color = Color(0.79607844, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_j61rb"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_evtkx"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
 
 [node name="Pagina6" type="Node2D"]
 script = ExtResource("1_l37vn")
@@ -221,6 +231,45 @@ na caixa Assim como, de acordo com os céticos,
 o homem nunca consegue
 conhecer a verdade."
 label_settings = SubResource("LabelSettings_an6qp")
+horizontal_alignment = 1
+
+[node name="gorgias" type="Sprite2D" parent="."]
+position = Vector2(172, 285)
+texture = ExtResource("13_sap2c")
+
+[node name="ColorRect" type="ColorRect" parent="gorgias"]
+offset_left = -81.0
+offset_top = 89.0
+offset_right = 87.0
+offset_bottom = 129.0
+
+[node name="Label" type="Label" parent="gorgias"]
+offset_left = -40.0
+offset_top = 91.0
+offset_right = 48.0
+offset_bottom = 125.0
+text = "Górgias"
+label_settings = SubResource("LabelSettings_j61rb")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="pirro" type="Sprite2D" parent="."]
+position = Vector2(631, 298)
+texture = ExtResource("14_4f0m8")
+
+[node name="ColorRect" type="ColorRect" parent="pirro"]
+offset_left = -67.0
+offset_top = 74.0
+offset_right = 79.0
+offset_bottom = 114.0
+
+[node name="Label" type="Label" parent="pirro"]
+offset_left = -27.0
+offset_top = 77.0
+offset_right = 30.0
+offset_bottom = 111.0
+text = "Pirro"
+label_settings = SubResource("LabelSettings_evtkx")
 horizontal_alignment = 1
 
 [connection signal="pressed" from="btn_prox_pagina" to="btn_prox_pagina" method="_on_pressed"]
