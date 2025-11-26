@@ -1,9 +1,9 @@
 extends Node2D
 
 @onready var matrix_answer = [[
-preload("res://assets/imagens/branca_neve.png"),
-preload("res://assets/imagens/macieira.png")
-], [preload("res://assets/imagens/bolo.png"),preload("res://assets/imagens/ovo_pascoa.webp")]];
+preload("res://assets/imagens/guarda-chuva.png"),
+preload("res://assets/imagens/arco-iris.png")
+], [preload("res://assets/imagens/calor.png"),preload("res://assets/imagens/bombeiros.png")]];
 @onready var bolha_img = preload("res://assets/imagens/bolha_pensamento.png")
 func _process(delta: float) -> void:
 	randomize()

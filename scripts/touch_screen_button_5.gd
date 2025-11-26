@@ -1,7 +1,7 @@
 extends TouchScreenButton
 
 
-@onready var array_icons = [preload("res://assets/imagens/maca.png"), preload("res://assets/imagens/chocolate.png")]; var rand;
+@onready var array_icons = [preload("res://assets/imagens/chuva.png"), preload("res://assets/imagens/fogo.png")]; var rand;
 
 
 
