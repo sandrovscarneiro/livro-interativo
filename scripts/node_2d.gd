@@ -9,7 +9,7 @@ preload("res://assets/imagens/macieira.png")
 func _process(delta: float) -> void:
 	randomize()
 	if !$Path2D/PathFollow2D.get_child_count() == 0:
-		$Path2D/PathFollow2D.progress += 90*delta
+		$Path2D/PathFollow2D.progress += 100*delta
 	if $Path2D/PathFollow2D.progress >= $Path2D.curve.get_baked_length():
 		for child in $Path2D/PathFollow2D.get_children():
 			if child is Sprite2D:

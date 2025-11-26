@@ -1,6 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bnc1xwt5t6860"]
+[gd_scene load_steps=22 format=3 uid="uid://bnc1xwt5t6860"]
 
 [ext_resource type="Texture2D" uid="uid://uaitmj2vcitf" path="res://assets/imagens/bg_pagina_6.png" id="1_a8pve"]
+[ext_resource type="Script" uid="uid://ed24kxgt2ulf" path="res://scripts/pagina_6.gd" id="1_l37vn"]
+[ext_resource type="Texture2D" uid="uid://cnx2wnobmxl46" path="res://assets/imagens/circulo.png" id="2_0x6j4"]
 [ext_resource type="Texture2D" uid="uid://bxgep0gwfw4r0" path="res://assets/imagens/btn_prox_pagina.png" id="2_id76e"]
 [ext_resource type="Texture2D" uid="uid://cgb200g3bj7dc" path="res://assets/imagens/btn_som_desligar.png" id="3_3dhu3"]
 [ext_resource type="Script" uid="uid://djngjiov5euex" path="res://scripts/btn_prox_pagina.gd" id="3_v2qhv"]
@@ -10,11 +12,56 @@
 [ext_resource type="Script" uid="uid://d2187rgv385j5" path="res://scripts/audio_stream_player.gd" id="7_0x6j4"]
 [ext_resource type="Script" uid="uid://s1xo5kem3d4k" path="res://scripts/btn_pag_anterior.gd" id="7_iwgyl"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_l37vn"]
+radius = 4.3566074
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_an6qp"]
+radius = 100.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_an6qp"]
+size = Vector2(273, 1050)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ld63q"]
+size = Vector2(1306, 213.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sap2c"]
+size = Vector2(248, 1038)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4f0m8"]
+size = Vector2(1285, 194)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l37vn"]
+size = Vector2(149.5, 1441)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j61rb"]
+size = Vector2(1412, 111)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_evtkx"]
+size = Vector2(217, 1540)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qabqm"]
+size = Vector2(1646, 183)
+
 [node name="Pagina6" type="Node2D"]
+script = ExtResource("1_l37vn")
 
 [node name="background" type="Sprite2D" parent="."]
 position = Vector2(384, 512)
 texture = ExtResource("1_a8pve")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(200, 200)
+continuous_cd = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(0.9999995, 1.9999999)
+scale = Vector2(10, 10)
+shape = SubResource("CircleShape2D_l37vn")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(0.9999995, 1.9999999)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_0x6j4")
 
 [node name="btn_prox_pagina" type="TouchScreenButton" parent="."]
 position = Vector2(580, 919)
@@ -47,9 +94,79 @@ texture_normal = ExtResource("5_id76e")
 script = ExtResource("7_iwgyl")
 path_pag_anterior = "res://cenas/pagina_5.tscn"
 
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(395, 322)
+gravity_space_override = 3
+gravity_point = true
+gravity_point_center = Vector2(0, -1)
+gravity_direction = Vector2(0, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-3, -3)
+shape = SubResource("CircleShape2D_an6qp")
+debug_color = Color(0.5882353, 0, 0.25882354, 1)
+
+[node name="Area2D2" type="Area2D" parent="."]
+gravity_space_override = 3
+gravity_point_center = Vector2(1, 0)
+gravity_direction = Vector2(1, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(-139.5, 509)
+shape = SubResource("RectangleShape2D_an6qp")
+
+[node name="Area2D3" type="Area2D" parent="."]
+gravity_space_override = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2(372, -111.25)
+shape = SubResource("RectangleShape2D_ld63q")
+
+[node name="Area2D4" type="Area2D" parent="."]
+gravity_space_override = 1
+gravity_point_center = Vector2(-1, 0)
+gravity_direction = Vector2(-1, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4"]
+position = Vector2(890, 509)
+shape = SubResource("RectangleShape2D_sap2c")
+
+[node name="Area2D5" type="Area2D" parent="."]
+gravity_space_override = 3
+gravity_point_center = Vector2(0, -1)
+gravity_direction = Vector2(0, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D5"]
+position = Vector2(377.5, 1125)
+shape = SubResource("RectangleShape2D_4f0m8")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-340.25, 502.5)
+shape = SubResource("RectangleShape2D_l37vn")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(308, 1277.5)
+shape = SubResource("RectangleShape2D_j61rb")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1122.5, 563)
+shape = SubResource("RectangleShape2D_evtkx")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(413, -304)
+shape = SubResource("RectangleShape2D_qabqm")
+
 [connection signal="pressed" from="btn_prox_pagina" to="btn_prox_pagina" method="_on_pressed"]
 [connection signal="pressed" from="btn_som" to="btn_som" method="_on_pressed"]
 [connection signal="pressed" from="btn_som" to="AudioStreamPlayer" method="_on_btn_som_pressed"]
 [connection signal="finished" from="AudioStreamPlayer" to="btn_som" method="_on_audio_stream_player_finished"]
 [connection signal="ready" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_ready"]
 [connection signal="pressed" from="btn_pag_anterior" to="btn_pag_anterior" method="_on_pressed"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D3" to="Area2D3" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D4" to="Area2D4" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D5" to="Area2D5" method="_on_body_entered"]
