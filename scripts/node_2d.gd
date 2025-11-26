@@ -1,10 +1,9 @@
 extends Node2D
 
-@onready var matrix_answer = [[preload("res://assets/imagens/Apple_logo_black.svg"),
-preload("res://assets/imagens/biblia.png"),
+@onready var matrix_answer = [[
 preload("res://assets/imagens/branca_neve.png"),
 preload("res://assets/imagens/macieira.png")
-], [preload("res://icon.svg"),preload("res://icon.svg"),preload("res://icon.svg"),preload("res://icon.svg")]];
+], [preload("res://assets/imagens/bolo.png"),preload("res://assets/imagens/ovo_pascoa.webp")]];
 @onready var bolha_img = preload("res://assets/imagens/bolha_pensamento.png")
 func _process(delta: float) -> void:
 	randomize()
@@ -22,9 +21,10 @@ func spawn_bolha():
 		add_child(bolha)
 		var entrada = get_parent().get_node("TouchScreenButton2").get_rand()
 		var pensamento = Sprite2D.new()
-		pensamento.texture = matrix_answer[entrada][randi_range(0,3)]
-		pensamento.apply_scale(Vector2(0.1,0.1))
-		bolha.position = Vector2(400,70)
+		pensamento.texture = matrix_answer[entrada][randi_range(0,1)]
+		pensamento.position.y -= 50
+		bolha.flip_h = true
+		bolha.position = Vector2(200,150)
 		bolha.apply_scale(Vector2(0.7,0.7))
 		bolha.add_child(pensamento)
 		

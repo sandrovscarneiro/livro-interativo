@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bnc1xwt5t6860"]
+[gd_scene load_steps=23 format=3 uid="uid://bnc1xwt5t6860"]
 
 [ext_resource type="Texture2D" uid="uid://uaitmj2vcitf" path="res://assets/imagens/bg_pagina_6.png" id="1_a8pve"]
 [ext_resource type="Script" uid="uid://ed24kxgt2ulf" path="res://scripts/pagina_6.gd" id="1_l37vn"]
@@ -11,9 +11,7 @@
 [ext_resource type="Script" uid="uid://ealxwk1jt2js" path="res://scripts/btn_som.gd" id="5_tao66"]
 [ext_resource type="Script" uid="uid://d2187rgv385j5" path="res://scripts/audio_stream_player.gd" id="7_0x6j4"]
 [ext_resource type="Script" uid="uid://s1xo5kem3d4k" path="res://scripts/btn_pag_anterior.gd" id="7_iwgyl"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_l37vn"]
-radius = 4.3566074
+[ext_resource type="Texture2D" uid="uid://b888ho022fi83" path="res://assets/imagens/caixa.webp" id="12_an6qp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_an6qp"]
 radius = 100.0
@@ -42,26 +40,15 @@ size = Vector2(217, 1540)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qabqm"]
 size = Vector2(1646, 183)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_l37vn"]
+radius = 4.3566074
+
 [node name="Pagina6" type="Node2D"]
 script = ExtResource("1_l37vn")
 
 [node name="background" type="Sprite2D" parent="."]
 position = Vector2(384, 512)
 texture = ExtResource("1_a8pve")
-
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2(200, 200)
-continuous_cd = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(0.9999995, 1.9999999)
-scale = Vector2(10, 10)
-shape = SubResource("CircleShape2D_l37vn")
-
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
-position = Vector2(0.9999995, 1.9999999)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_0x6j4")
 
 [node name="btn_prox_pagina" type="TouchScreenButton" parent="."]
 position = Vector2(580, 919)
@@ -98,8 +85,8 @@ path_pag_anterior = "res://cenas/pagina_5.tscn"
 position = Vector2(395, 322)
 gravity_space_override = 3
 gravity_point = true
-gravity_point_center = Vector2(0, -1)
-gravity_direction = Vector2(0, -1)
+gravity_point_center = Vector2(0, -30)
+gravity_direction = Vector2(0, -30)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-3, -3)
@@ -157,6 +144,67 @@ shape = SubResource("RectangleShape2D_evtkx")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(413, -304)
 shape = SubResource("RectangleShape2D_qabqm")
+
+[node name="Caixa" type="Sprite2D" parent="."]
+position = Vector2(410, 313)
+scale = Vector2(0.5576172, 0.46582028)
+texture = ExtResource("12_an6qp")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(200, 200)
+continuous_cd = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(0.9999995, 1.9999999)
+scale = Vector2(10, 10)
+shape = SubResource("CircleShape2D_l37vn")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(0.9999995, 1.9999999)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_0x6j4")
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="."]
+position = Vector2(60, 352)
+continuous_cd = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
+position = Vector2(0.9999995, 1.9999999)
+scale = Vector2(10, 10)
+shape = SubResource("CircleShape2D_l37vn")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D2"]
+position = Vector2(0.9999995, 1.9999999)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_0x6j4")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="."]
+position = Vector2(542, 65)
+continuous_cd = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D3"]
+position = Vector2(0.9999995, 1.9999999)
+scale = Vector2(10, 10)
+shape = SubResource("CircleShape2D_l37vn")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D3"]
+position = Vector2(0.9999995, 1.9999999)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_0x6j4")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="."]
+position = Vector2(673, 310)
+continuous_cd = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D4"]
+position = Vector2(0.9999995, 1.9999999)
+scale = Vector2(10, 10)
+shape = SubResource("CircleShape2D_l37vn")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D4"]
+position = Vector2(0.9999995, 1.9999999)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_0x6j4")
 
 [connection signal="pressed" from="btn_prox_pagina" to="btn_prox_pagina" method="_on_pressed"]
 [connection signal="pressed" from="btn_som" to="btn_som" method="_on_pressed"]

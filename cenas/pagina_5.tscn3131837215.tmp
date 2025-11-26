@@ -1,6 +1,7 @@
-[gd_scene load_steps=24 format=3 uid="uid://rhdathwpo43c"]
+[gd_scene load_steps=25 format=3 uid="uid://rhdathwpo43c"]
 
 [ext_resource type="Texture2D" uid="uid://cq6p4ua3h27cg" path="res://assets/imagens/bg_pagina_5.png" id="1_dyob2"]
+[ext_resource type="Script" uid="uid://c4y1bet1s24hl" path="res://scripts/pagina_5.gd" id="1_r6j27"]
 [ext_resource type="Texture2D" uid="uid://bxgep0gwfw4r0" path="res://assets/imagens/btn_prox_pagina.png" id="2_sfyh7"]
 [ext_resource type="Texture2D" uid="uid://cgb200g3bj7dc" path="res://assets/imagens/btn_som_desligar.png" id="3_3tj36"]
 [ext_resource type="Script" uid="uid://djngjiov5euex" path="res://scripts/btn_prox_pagina.gd" id="3_r83hw"]
@@ -16,30 +17,15 @@
 [ext_resource type="Script" uid="uid://dj4x5uytpkasb" path="res://scripts/node_2d.gd" id="15_r6j27"]
 [ext_resource type="Texture2D" uid="uid://c0rr80p3totuc" path="res://assets/imagens/lever.png" id="17_5ieun"]
 [ext_resource type="Script" uid="uid://37ckf7wxft1x" path="res://scripts/touch_screen_button_2.gd" id="18_3228g"]
+[ext_resource type="Script" uid="uid://bydrf7np186eb" path="res://scripts/touch_screen_button_3.gd" id="18_x2477"]
+[ext_resource type="Script" uid="uid://dveb38u21svie" path="res://scripts/touch_screen_button_4.gd" id="19_x2477"]
+[ext_resource type="Script" uid="uid://bv20b6p3xk2xk" path="res://scripts/touch_screen_button_5.gd" id="20_7a1e6"]
 
 [sub_resource type="Curve2D" id="Curve2D_r6j27"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 711, 194, 0, 0, 0, 0, 718, 348, 0, 0, 0, 0, 690, 350, 0, 0, 0, 0, 612, 418, 0, 0, 0, 0, 413, 417)
 }
 point_count = 5
-
-[sub_resource type="Curve2D" id="Curve2D_5ieun"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 62, 205, 0, 0, 0, 0, 58, 303, 0, 0, 0, 0, 87, 303, 0, 0, 0, 0, 164, 365, 0, 0, 0, 0, 336, 368)
-}
-point_count = 5
-
-[sub_resource type="Curve2D" id="Curve2D_3228g"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 690, 194, 0, 0, 0, 0, 697, 306, 0, 0, 0, 0, 607, 380, 0, 0, 0, 0, 435, 379)
-}
-point_count = 4
-
-[sub_resource type="Curve2D" id="Curve2D_x2477"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 699, 205, 0, 0, 0, 0, 702, 256, 0, 0, 0, 0, 607, 338, 0, 0, 0, 0, 431, 338)
-}
-point_count = 4
 
 [sub_resource type="LabelSettings" id="LabelSettings_8yqdp"]
 font_size = 36
@@ -51,6 +37,7 @@ font_color = Color(0, 0, 0, 1)
 size = Vector2(600, 500)
 
 [node name="Pagina5" type="Node2D"]
+script = ExtResource("1_r6j27")
 
 [node name="background" type="Sprite2D" parent="."]
 position = Vector2(384, 512)
@@ -92,44 +79,6 @@ position = Vector2(380, 354)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("12_siyx2")
 
-[node name="Node2D" type="Node2D" parent="."]
-script = ExtResource("15_r6j27")
-
-[node name="Path2D" type="Path2D" parent="Node2D"]
-curve = SubResource("Curve2D_r6j27")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Node2D/Path2D"]
-position = Vector2(711, 194)
-rotation = 1.5253731
-loop = false
-
-[node name="Node2D2" type="Node2D" parent="."]
-
-[node name="Path2D" type="Path2D" parent="Node2D2"]
-curve = SubResource("Curve2D_5ieun")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Node2D2/Path2D"]
-position = Vector2(62, 205)
-rotation = 1.61159
-
-[node name="Node2D3" type="Node2D" parent="."]
-
-[node name="Path2D" type="Path2D" parent="Node2D3"]
-curve = SubResource("Curve2D_3228g")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Node2D3/Path2D"]
-position = Vector2(690, 194)
-rotation = 1.5083776
-
-[node name="Node2D4" type="Node2D" parent="."]
-
-[node name="Path2D" type="Path2D" parent="Node2D4"]
-curve = SubResource("Curve2D_x2477")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Node2D4/Path2D"]
-position = Vector2(699, 205)
-rotation = 1.5120405
-
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(593.5, 395)
 scale = Vector2(0.41, 0.5)
@@ -146,10 +95,21 @@ scale = Vector2(0.41, 0.5)
 texture = ExtResource("13_0b5nr")
 
 [node name="Sprite2D5" type="Sprite2D" parent="."]
-position = Vector2(167.49998, 348)
-scale = Vector2(0.39285716, 0.5)
+position = Vector2(188.00002, 348)
+scale = Vector2(0.45142865, 0.5)
 texture = ExtResource("13_0b5nr")
 flip_h = true
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("15_r6j27")
+
+[node name="Path2D" type="Path2D" parent="Node2D"]
+curve = SubResource("Curve2D_r6j27")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Node2D/Path2D"]
+position = Vector2(711, 194)
+rotation = 1.5253731
+loop = false
 
 [node name="john_locke" type="Sprite2D" parent="."]
 visible = false
@@ -189,6 +149,34 @@ script = ExtResource("18_3228g")
 [node name="Sprite2D" type="Sprite2D" parent="TouchScreenButton2"]
 texture = ExtResource("17_5ieun")
 
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="."]
+position = Vector2(748, 300)
+scale = Vector2(0.1, 0.1)
+shape = SubResource("RectangleShape2D_5ieun")
+script = ExtResource("18_x2477")
+
+[node name="Sprite2D" type="Sprite2D" parent="TouchScreenButton3"]
+texture = ExtResource("17_5ieun")
+
+[node name="TouchScreenButton4" type="TouchScreenButton" parent="."]
+position = Vector2(748, 256)
+scale = Vector2(0.1, 0.1)
+shape = SubResource("RectangleShape2D_5ieun")
+script = ExtResource("19_x2477")
+
+[node name="Sprite2D" type="Sprite2D" parent="TouchScreenButton4"]
+texture = ExtResource("17_5ieun")
+
+[node name="TouchScreenButton5" type="TouchScreenButton" parent="."]
+position = Vector2(30.000061, 287)
+scale = Vector2(0.1, 0.1)
+shape = SubResource("RectangleShape2D_5ieun")
+script = ExtResource("20_7a1e6")
+
+[node name="Sprite2D" type="Sprite2D" parent="TouchScreenButton5"]
+texture = ExtResource("17_5ieun")
+flip_h = true
+
 [connection signal="pressed" from="btn_prox_pagina" to="btn_prox_pagina" method="_on_pressed"]
 [connection signal="pressed" from="btn_som" to="btn_som" method="_on_pressed"]
 [connection signal="pressed" from="btn_som" to="AudioStreamPlayer" method="_on_btn_som_pressed"]
@@ -198,3 +186,6 @@ texture = ExtResource("17_5ieun")
 [connection signal="pressed" from="TouchScreenButton" to="TouchScreenButton" method="_on_pressed"]
 [connection signal="released" from="TouchScreenButton" to="TouchScreenButton" method="_on_released"]
 [connection signal="pressed" from="TouchScreenButton2" to="TouchScreenButton2" method="_on_pressed"]
+[connection signal="pressed" from="TouchScreenButton3" to="TouchScreenButton3" method="_on_pressed"]
+[connection signal="pressed" from="TouchScreenButton4" to="TouchScreenButton4" method="_on_pressed"]
+[connection signal="pressed" from="TouchScreenButton5" to="TouchScreenButton5" method="_on_pressed"]
