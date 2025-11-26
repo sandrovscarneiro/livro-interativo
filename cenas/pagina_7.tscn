@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://s1xo5kem3d4k" path="res://scripts/btn_pag_anterior.gd" id="7_fsfl7"]
 [ext_resource type="Script" uid="uid://c3kugbm7rosfv" path="res://scripts/pivot.gd" id="10_1lhl4"]
 [ext_resource type="PackedScene" uid="uid://c224xclkirp65" path="res://assets/imagens/Angry Point.fbx" id="11_ty1k5"]
-[ext_resource type="Texture2D" uid="uid://j46kp7y61uoe" path="res://assets/imagens/speech-bubble.png" id="12_4su6q"]
+[ext_resource type="Texture2D" uid="uid://j46kp7y61uoe" path="res://assets/imagens/bolha_fala.png" id="12_4su6q"]
 
 [sub_resource type="Environment" id="Environment_ty1k5"]
 background_mode = 2

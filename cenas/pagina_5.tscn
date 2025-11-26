@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://rhdathwpo43c"]
+[gd_scene load_steps=21 format=3 uid="uid://rhdathwpo43c"]
 
 [ext_resource type="Texture2D" uid="uid://cq6p4ua3h27cg" path="res://assets/imagens/bg_pagina_5.png" id="1_dyob2"]
 [ext_resource type="Script" uid="uid://c4y1bet1s24hl" path="res://scripts/pagina_5.gd" id="1_r6j27"]
@@ -14,12 +14,21 @@
 [ext_resource type="Texture2D" uid="uid://b6qusmxahvxl6" path="res://assets/imagens/homem.png" id="12_siyx2"]
 [ext_resource type="Texture2D" uid="uid://bjeyvl0mbe864" path="res://assets/imagens/esteira.png" id="13_0b5nr"]
 [ext_resource type="Script" uid="uid://bi5gdxas8pigm" path="res://scripts/touch_screen_button.gd" id="14_0b5nr"]
+[ext_resource type="Script" uid="uid://dj4x5uytpkasb" path="res://scripts/node_2d.gd" id="15_r6j27"]
+[ext_resource type="Texture2D" uid="uid://c0rr80p3totuc" path="res://assets/imagens/lever.png" id="17_5ieun"]
+[ext_resource type="Script" uid="uid://37ckf7wxft1x" path="res://scripts/touch_screen_button_2.gd" id="18_3228g"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8yqdp"]
 font_size = 36
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4wnhj"]
+
+[sub_resource type="Curve2D" id="Curve2D_r6j27"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 764, 341, 0, 0, 0, 0, 733, 341, 0, 0, 0, 0, 642, 412, 0, 0, 0, 0, 425, 412)
+}
+point_count = 4
 
 [node name="Pagina5" type="Node2D"]
 script = ExtResource("1_r6j27")
@@ -65,8 +74,8 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("12_siyx2")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(625, 395)
-scale = Vector2(0.5, 0.5)
+position = Vector2(593.5, 395)
+scale = Vector2(0.41, 0.5)
 texture = ExtResource("13_0b5nr")
 
 [node name="john_locke" type="Sprite2D" parent="."]
@@ -97,9 +106,29 @@ scale = Vector2(7, 1)
 shape = SubResource("RectangleShape2D_4wnhj")
 script = ExtResource("14_0b5nr")
 
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("15_r6j27")
+
+[node name="Path2D" type="Path2D" parent="Node2D"]
+curve = SubResource("Curve2D_r6j27")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Node2D/Path2D"]
+position = Vector2(764, 341)
+rotation = 3.1415927
+loop = false
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="."]
+position = Vector2(713, 300.00003)
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("17_5ieun")
+script = ExtResource("18_3228g")
+
 [connection signal="pressed" from="btn_prox_pagina" to="btn_prox_pagina" method="_on_pressed"]
 [connection signal="pressed" from="btn_som" to="btn_som" method="_on_pressed"]
 [connection signal="pressed" from="btn_som" to="AudioStreamPlayer" method="_on_btn_som_pressed"]
 [connection signal="finished" from="AudioStreamPlayer" to="btn_som" method="_on_audio_stream_player_finished"]
 [connection signal="ready" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_ready"]
 [connection signal="pressed" from="btn_pag_anterior" to="btn_pag_anterior" method="_on_pressed"]
+[connection signal="pressed" from="TouchScreenButton" to="TouchScreenButton" method="_on_pressed"]
+[connection signal="released" from="TouchScreenButton" to="TouchScreenButton" method="_on_released"]
+[connection signal="pressed" from="TouchScreenButton2" to="TouchScreenButton2" method="_on_pressed"]
